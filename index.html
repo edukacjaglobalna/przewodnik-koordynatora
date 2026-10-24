@@ -1,0 +1,1517 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Przewodnik Koordynatora</title>
+<meta name="description" content="Praktyczny przewodnik dla koordynatorów Sieci klubów Radykalnego Centrum: pierwsze 30 dni, karty sytuacji, gotowe wiadomości, zegar spotkania i aktualne zasady.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Przewodnik Koordynatora">
+<meta property="og:description" content="Praktyczny przewodnik dla koordynatorów Sieci klubów Radykalnego Centrum: pierwsze 30 dni, karty sytuacji, gotowe wiadomości, zegar spotkania i aktualne zasady.">
+<meta name="theme-color" content="#201E1D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' fill='%23F3F2F2'/%3E%3Crect x='6' y='20' width='60' height='6' fill='%23201E1D'/%3E%3Cpolygon points='27,52 45,52 36,26' fill='%23EC3013'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Wydanie 1.1: układ „jedna sprawa na raz”. Kolory i kroje według księgi znaku „Punkt podparcia”. */
+:root{
+  --bg:#F3F2F2; --surface:#FFFFFF; --surface-2:#E9E7E6; --ink:#201E1D; --ink-2:#46413E; --muted:#67615D; --line:#D8D4D1; --line-strong:#8F8A86;
+  --red:#EC3013; --red-ink:#C42A10; --red-soft:#FBE4DF; --on-ink:#F3F2F2; --scrim:rgba(32,30,29,.55);
+  --dc-bg:#313338; --dc-bg-2:#2B2D31; --dc-line:#1E1F22; --dc-ink:#DBDEE1; --dc-name:#F2F3F5; --dc-muted:#949BA4; --dc-mention-bg:rgba(88,101,242,.30); --dc-mention:#DEE0FC; --dc-link:#00A8FC; --dc-av:#EC3013;
+  --st-bg:#201E1D; --st-2:#2C2927; --st-line:#423D3A; --st-ink:#F3F2F2; --st-muted:#A8A29D; --st-red:#EC3013;
+  --f-sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --bar-h:62px; --tab-h:62px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#171514; --surface:#201E1D; --surface-2:#2B2826; --ink:#F3F2F2; --ink-2:#D2CDC9; --muted:#A49E99; --line:#3A3633; --line-strong:#7A746F;
+  --red:#EC3013; --red-ink:#FF6A4D; --red-soft:#3A1B14; --on-ink:#201E1D; --scrim:rgba(0,0,0,.66); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171514; --surface:#201E1D; --surface-2:#2B2826; --ink:#F3F2F2; --ink-2:#D2CDC9; --muted:#A49E99; --line:#3A3633; --line-strong:#7A746F;
+  --red:#EC3013; --red-ink:#FF6A4D; --red-soft:#3A1B14; --on-ink:#201E1D; --scrim:rgba(0,0,0,.66); color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{overflow-x:clip;scroll-padding-top:calc(var(--bar-h) + 16px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+code,kbd{font-family:var(--f-mono);font-size:.86em}
+code{background:var(--surface-2);padding:.08em .35em;overflow-wrap:anywhere}
+kbd{border:1.5px solid var(--line-strong);padding:0 .4em;background:var(--surface);color:var(--ink-2)}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.caps{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.mono{font-family:var(--f-mono)}
+.muted{color:var(--muted)}
+.ico{width:20px;height:20px;flex:none}
+
+/* Przyciski i znaczniki */
+.btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);background:transparent;color:var(--ink);padding:9px 14px;font-weight:600;font-size:14.5px;cursor:pointer;text-decoration:none;line-height:1.15;min-height:44px;transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:var(--on-ink)}
+.btn.primary{background:var(--ink);color:var(--on-ink)}
+.btn.primary:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.btn.sm{padding:6px 12px;font-size:13.5px;min-height:38px}
+.btn svg{width:16px;height:16px;flex:none}
+.link{background:none;border:0;padding:0;color:var(--ink);font-weight:600;cursor:pointer;text-decoration:none;border-bottom:2px solid var(--red);line-height:1.3}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;white-space:nowrap;border:1.5px solid var(--ink);color:var(--ink);line-height:1.3}
+.tag.rule{background:var(--ink);color:var(--on-ink)}
+.tag.open{border-style:dashed}
+.tag.oral{border-style:double;border-width:3px;padding:2px 7px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line-strong);background:var(--surface);padding:8px 13px;font-size:14.5px;font-weight:500;cursor:pointer;color:var(--ink);min-height:42px;transition:background .15s,color .15s;text-align:left}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.chip .n{font-family:var(--f-mono);font-size:12px;opacity:.7;margin-left:6px}
+.chev{width:22px;height:22px;flex:none;transition:transform .2s}
+details[open]>summary .chev{transform:rotate(180deg)}
+
+/* Pasek górny */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:2px solid var(--ink)}
+.bar-in{display:flex;align-items:center;gap:16px;min-height:var(--bar-h);padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex:none;min-width:0}
+.brand svg{width:52px;height:19px;flex:none}
+.brand b{font-weight:700;font-size:15.5px;line-height:1.1;display:block;white-space:nowrap}
+.brand small{display:block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.searchbtn{flex:1;max-width:540px;margin-left:auto;display:flex;align-items:center;gap:10px;border:2px solid var(--ink);background:var(--surface);padding:0 12px;min-height:44px;font-size:15px;color:var(--muted);cursor:pointer;text-align:left}
+.searchbtn svg{width:18px;height:18px;color:var(--ink);flex:none}
+.searchbtn .lbl{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.searchbtn .short{display:none;color:var(--ink);font-weight:600}
+.clubbtn{flex:none}
+@media (max-width:1079px){.clubbtn{display:none!important}}
+@media (max-width:700px){.brand small{display:none}.searchbtn{flex:none}.searchbtn .lbl,.searchbtn kbd{display:none}.searchbtn .short{display:inline}}
+@media (max-width:440px){.brand svg{display:none}.bar-in{gap:10px}}
+@media (max-width:359px){.searchbtn .short{display:none}.searchbtn{padding:0 12px}.brand b{font-size:15px}}
+
+/* Układ: menu boczne + treść */
+.shell{display:grid;grid-template-columns:minmax(0,1fr)}
+.side{display:none}
+@media (min-width:1080px){
+  .shell{grid-template-columns:276px minmax(0,1fr)}
+  .side{display:block;position:sticky;top:calc(var(--bar-h) + 2px + env(safe-area-inset-top,0px));align-self:start;height:calc(100vh - var(--bar-h) - 2px);overflow-y:auto;border-right:2px solid var(--ink);padding:18px 12px 28px}
+}
+.navlist{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.navlist a{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;text-decoration:none;color:var(--ink);box-shadow:inset 4px 0 0 transparent;min-height:52px}
+.navlist a:hover{background:var(--surface)}
+.navlist a.on{background:var(--surface);box-shadow:inset 4px 0 0 var(--red)}
+.navlist .no{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--muted);text-align:center}
+.navlist a.on .no{color:var(--red-ink)}
+.navlist .no svg{width:18px;height:18px;display:block;margin:auto;color:var(--ink-2)}
+.navlist b{display:block;font-size:15px;font-weight:600;line-height:1.25}
+.navlist small{display:block;font-size:12.5px;color:var(--muted);line-height:1.3;margin-top:1px}
+.navlist .meta{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+.navlist li.sep{height:1px;background:var(--line);margin:8px 12px}
+.navclub{margin:16px 12px 0;padding-top:14px;border-top:1px solid var(--line);font-size:14px;line-height:1.45;display:grid;gap:6px}
+.navclub .muted{font-size:12.5px}
+.navclub b{font-size:15px}
+
+main{min-width:0;padding-bottom:calc(var(--tab-h) + env(safe-area-inset-bottom,0px))}
+@media (min-width:1080px){main{padding-bottom:0}}
+.view{min-width:0;max-width:1060px;margin:0 auto;padding:26px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
+@media (min-width:1080px){.view{margin:0;padding:34px 44px 56px}}
+.crumb{font-size:13.5px;color:var(--muted);margin:0 0 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.crumb a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-strong);font-weight:600}
+.vhead{margin-bottom:26px;border-bottom:2px solid var(--ink);padding-bottom:20px}
+.vhead .no{font-family:var(--f-mono);color:var(--red-ink);font-weight:600;font-size:15px;display:block;margin-bottom:6px}
+.vhead h1{font-size:clamp(30px,4.2vw,44px);line-height:1.06;letter-spacing:-.02em;font-weight:700;outline:none}
+.vhead .lede{margin:10px 0 0;font-size:17px;color:var(--ink-2);max-width:64ch}
+.when{display:flex;gap:10px;align-items:baseline;margin-top:12px;font-size:15px;color:var(--ink-2);max-width:72ch}
+.when b{flex:none;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--surface-2);padding:2px 7px}
+h2.grp{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin:32px 0 10px;display:flex;align-items:baseline;gap:8px}
+h2.grp:first-child{margin-top:4px}
+h2.grp .n{font-family:var(--f-mono);color:var(--muted);letter-spacing:0;font-weight:500}
+h2.blk{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:0 0 6px}
+.blk-sub{margin:0 0 16px;color:var(--ink-2);font-size:15.5px;max-width:64ch}
+.pager{margin-top:44px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:16px}
+.pager a{text-decoration:none;color:var(--ink);display:grid;gap:2px;padding:6px 0;min-width:0}
+.pager a.nx{text-align:right;margin-left:auto}
+.pager small{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.pager b{font-size:18px;font-weight:700}
+.pager a:hover b{border-bottom:2px solid var(--red)}
+
+/* Wyszukiwarka */
+.searchbox{position:relative;display:flex;align-items:center;background:var(--surface);border:2px solid var(--ink)}
+.searchbox:focus-within{border-color:var(--red)}
+.searchbox svg{width:20px;height:20px;margin-left:16px;color:var(--ink-2);flex:none}
+.searchbox input{flex:1;min-width:0;border:0;background:transparent;padding:15px 14px;font-size:17px;outline:none}
+.searchbox kbd{margin-right:14px;flex:none}
+.searchbox.sm input{padding:11px 12px;font-size:16px}
+.searchbox.sm svg{margin-left:12px;width:18px;height:18px}
+@media (max-width:560px){.searchbox kbd{display:none}}
+.results{list-style:none;margin:0;padding:0;display:grid}
+.ask .results:not(:empty){margin-top:-2px;border:2px solid var(--ink);border-top:0;background:var(--surface)}
+.results li+li button{border-top:1px solid var(--line)}
+.results li button{width:100%;text-align:left;display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;align-items:center;border:0;background:transparent;padding:12px 16px;cursor:pointer;min-height:52px}
+.results li button:hover,.results li button.hl{background:var(--surface-2)}
+.results .rt{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.results .rx{font-weight:600;min-width:0}
+.results .rx small{display:block;color:var(--muted);font-weight:400;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.results .ra{font-weight:700}
+.results .none{padding:14px 16px;color:var(--muted);font-size:15px}
+@media (max-width:560px){.results li button{grid-template-columns:minmax(0,1fr) auto}.results .rt{display:none}}
+
+/* Start */
+.start-head h1{font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.02;outline:none}
+.start-head p{margin:10px 0 0;font-size:17.5px;color:var(--ink-2);max-width:60ch}
+.start-head .ed{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin:0 0 10px}
+.ask{margin-top:24px}
+.ask label{display:block;font-size:20px;font-weight:700;margin-bottom:10px}
+.tiles-h{font-size:20px;font-weight:700;margin:36px 0 12px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+.tile{display:grid;grid-template-rows:auto auto 1fr auto;gap:6px;background:var(--surface);padding:18px 20px 16px;text-decoration:none;color:var(--ink);min-height:178px;box-shadow:inset 0 0 0 0 var(--ink);transition:box-shadow .15s}
+.tile:hover{box-shadow:inset 0 0 0 2px var(--ink)}
+.tile .no{font-family:var(--f-mono);font-size:13px;color:var(--red-ink);font-weight:600}
+.tile b{font-size:21px;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.tile p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.45}
+.tile .meta{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-2);display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
+.tile .meta i{font-style:normal;font-family:var(--f-sans);font-weight:700;font-size:16px;color:var(--ink)}
+@media (max-width:560px){.tile{min-height:0;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto;padding:14px 16px;gap:2px 12px;align-items:center}.tile .no{display:none}.tile b{font-size:18px;grid-column:1}.tile p{grid-column:1;font-size:14px}.tile .meta{grid-column:2;grid-row:1/3;border:0;padding:0;margin:0}.tile .meta span{display:none}}
+.start-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:36px}
+@media (max-width:820px){.start-cols{grid-template-columns:1fr}}
+.quick{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.quick li{border-bottom:1px solid var(--line)}
+.quick a,.quick button{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:12px 2px;background:none;border:0;cursor:pointer;color:var(--ink);text-decoration:none;font-weight:600;font-size:15.5px;min-height:48px}
+.quick a:hover,.quick button:hover{background:var(--surface)}
+.month{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.month li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;font-size:14.5px;line-height:1.45;padding:11px 0;border-bottom:1px solid var(--line)}
+.month time{font-family:var(--f-mono);font-size:13px;font-weight:600;padding-top:1px}
+.month a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:2px solid var(--red);white-space:nowrap}
+.colh{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}
+.clubcard{background:var(--ink);color:var(--on-ink);padding:16px 20px;display:flex;justify-content:space-between;gap:12px 20px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.clubcard p{margin:0;font-size:15px;max-width:60ch}
+.clubcard b{font-size:16px}
+.clubcard .btn{border-color:var(--on-ink);color:var(--on-ink)}
+.clubcard .btn:hover{background:var(--on-ink);color:var(--ink)}
+
+/* 30 dni */
+.next{background:var(--ink);color:var(--on-ink);padding:22px 24px;display:grid;gap:8px;margin-bottom:24px}
+.next .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.next h2{font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.next p{margin:0;opacity:.9;max-width:64ch}
+.next ul{margin:4px 0 0;padding-left:18px;max-width:70ch}
+.next li{margin:3px 0}
+.next .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.next .btn{border-color:var(--on-ink);color:var(--on-ink)}
+.next .btn:hover{background:var(--on-ink);color:var(--ink)}
+.next .btn.primary{background:var(--on-ink);color:var(--ink)}
+.next code{background:rgba(255,255,255,.14);color:inherit}
+.pathbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px 28px;align-items:end;margin-bottom:6px}
+@media (max-width:700px){.pathbar{grid-template-columns:1fr}}
+.startdate{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14.5px;color:var(--ink-2)}
+.startdate input{border:1.5px solid var(--line-strong);background:var(--surface);padding:8px 10px;min-height:42px;font-size:16px}
+.startdate .muted{font-size:13.5px;width:100%}
+.prog .lbl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;font-size:14px;color:var(--ink-2)}
+.prog b{font-family:var(--f-mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums;line-height:1;color:var(--ink)}
+.prog .track{position:relative;height:10px;background:var(--line)}
+.prog .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--ink);transition:width .5s ease}
+.tlist{display:grid;gap:3px}
+.trow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;background:var(--surface);padding:12px 18px;align-items:start}
+.trow.is-done{background:var(--surface-2)}
+.trow.today{box-shadow:inset 4px 0 0 var(--red)}
+.trow.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,100%{outline:0 solid transparent}30%{outline:3px solid var(--red)}}
+.check{width:32px;height:32px;border:2px solid var(--ink);background:var(--surface);cursor:pointer;display:grid;place-items:center;margin-top:4px;padding:0}
+.check svg{width:18px;height:18px;opacity:0;transform:scale(.6);transition:all .2s;color:var(--on-ink)}
+.check[aria-checked="true"]{background:var(--ink)}
+.check[aria-checked="true"] svg{opacity:1;transform:none}
+.trow summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;min-height:40px;padding:2px 0}
+.trow summary::-webkit-details-marker{display:none}
+.trow .day{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);display:block;line-height:1.3}
+.trow .day .td{color:var(--red-ink);font-weight:600}
+.trow h3{font-size:17px;font-weight:600;line-height:1.3}
+.trow.is-done h3{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--red)}
+.trow .body{padding:8px 0 6px}
+.trow .body p{margin:0;color:var(--ink-2);max-width:70ch}
+.trow .body ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);max-width:72ch}
+.trow .body li{margin:3px 0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+
+/* Sytuacje */
+.sit-tools{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:8px}
+.sit-tools>*{min-width:0}
+#tasks>h2.grp:first-child{margin-top:28px}
+#sits>h2.grp:first-child{margin-top:20px}
+.sits{display:grid;gap:3px}
+details.sit{background:var(--surface)}
+details.sit[open]{box-shadow:inset 0 2px 0 var(--ink)}
+details.sit summary{list-style:none;cursor:pointer;padding:15px 18px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;min-height:64px}
+details.sit summary::-webkit-details-marker{display:none}
+details.sit summary .k{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+details.sit summary .k .tag{font-size:9.5px;padding:1px 6px}
+details.sit summary h3{font-size:18px;font-weight:600;line-height:1.25}
+details.sit summary .pv{margin:5px 0 0;color:var(--ink-2);font-size:14.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+details.sit[open] summary .pv{display:none}
+.sit-body{padding:2px 18px 22px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px}
+@media (max-width:900px){.sit-body{grid-template-columns:1fr;gap:18px}}
+.sit-body h4{margin:0 0 10px;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;line-height:1.5}
+.steps li::before{content:counter(s);width:24px;height:24px;background:var(--ink);color:var(--on-ink);font-family:var(--f-mono);font-size:12px;font-weight:600;display:grid;place-items:center;margin-top:1px}
+.dont{margin-top:18px;padding:12px 16px;background:var(--red-soft);box-shadow:inset 4px 0 0 var(--red);font-size:15px}
+.answer{background:var(--surface-2);padding:16px 18px;margin-bottom:18px}
+.answer p{margin:0 0 12px;font-size:16px}
+.sit-aside{display:grid;gap:14px;align-content:start}
+.sit-aside .row{font-size:14px;line-height:1.5}
+.proof{box-shadow:inset 2px 0 0 var(--ink);padding:2px 0 2px 14px;font-size:15px;color:var(--ink-2)}
+.empty{padding:22px;border:1.5px dashed var(--line-strong);color:var(--muted)}
+.count{font-size:13.5px;color:var(--muted);margin:2px 0 0}
+.count:empty{display:none}
+@media (max-width:700px){
+  .scrollchips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));padding-right:16px;-webkit-overflow-scrolling:touch}
+  .scrollchips::-webkit-scrollbar{display:none}
+  .scrollchips .chip{flex:none}
+}
+
+/* Gotowe wiadomości */
+.picker{display:grid;gap:12px;margin-bottom:18px}
+.pgroup{display:grid;grid-template-columns:140px minmax(0,1fr);gap:8px 14px;align-items:start}
+.pgroup .gl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);padding-top:12px}
+@media (max-width:640px){.pgroup{grid-template-columns:1fr}.pgroup .gl{padding-top:0}}
+.tinfo{display:flex;gap:10px;align-items:baseline;background:var(--surface-2);padding:12px 16px;font-size:15px;margin-bottom:18px;color:var(--ink-2)}
+.tinfo b{flex:none;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.gen{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;background:var(--surface);padding:20px}
+.form .full{grid-column:1/-1}
+.form-h{grid-column:1/-1;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.f{display:grid;gap:5px;min-width:0;align-content:start}
+.f label{font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.f input,.f select,.f textarea{width:100%;border:1.5px solid var(--line-strong);background:var(--bg);padding:9px 11px;font-size:16px;min-width:0;min-height:44px;border-radius:0}
+.f textarea{resize:vertical;min-height:76px;line-height:1.45}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);background:var(--surface)}
+.f .hint{font-size:12.5px;color:var(--muted)}
+.form-note{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:2px}
+@media (max-width:520px){.form{grid-template-columns:1fr;padding:16px}}
+.preview{display:grid;gap:12px}
+.pv-h{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+@media (min-width:900px) and (max-width:1079px),(min-width:1260px){
+  .gen{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+  .preview{position:sticky;top:calc(var(--bar-h) + 16px)}
+}
+.dc{background:var(--dc-bg);color:var(--dc-ink);border-radius:8px;overflow:hidden}
+.dc-top{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--dc-bg-2);border-bottom:1px solid var(--dc-line);color:var(--dc-muted);font-size:14px;font-weight:600}
+.dc-top b{color:var(--dc-name)}
+.dc-top svg{width:18px;height:18px}
+.dc-msg{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:16px}
+.dc-av{width:40px;height:40px;border-radius:50%;background:var(--dc-av);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+.dc-name{color:var(--dc-name);font-weight:600;font-size:15px}
+.dc-name small{color:var(--dc-muted);font-weight:400;font-size:12px;margin-left:8px}
+.dc-body{font-size:15px;line-height:1.42;margin-top:2px;overflow-wrap:anywhere;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.dc-body strong{color:var(--dc-name)}
+.dc-body code{background:var(--dc-bg-2);color:var(--dc-ink);border-radius:3px}
+.dc-body .mn{background:var(--dc-mention-bg);color:var(--dc-mention);border-radius:3px;padding:0 2px;font-weight:500}
+.dc-body .ln{color:var(--dc-link)}
+.pv-actions{display:grid;gap:10px}
+.pv-actions .btn{justify-content:center;width:100%;min-height:50px;font-size:15.5px}
+.pv-actions .muted{font-size:14px}
+.copyfab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(var(--tab-h) + 14px + env(safe-area-inset-bottom,0px));z-index:34;display:none;gap:8px;align-items:center;background:var(--ink);color:var(--on-ink);border:2px solid var(--ink);padding:0 16px;min-height:48px;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 0 0 3px var(--bg)}
+.copyfab svg{width:18px;height:18px}
+@media (max-width:899px){.copyfab.show{display:inline-flex}}
+.toview{display:none;margin-top:4px}
+@media (max-width:899px){.toview{display:block}}
+.filename{font-family:var(--f-mono);font-size:clamp(14px,2vw,17px);font-weight:500;background:var(--surface);padding:16px 18px;overflow-wrap:anywhere;box-shadow:inset 0 2px 0 var(--ink)}
+.filename .lab{display:block;font-family:var(--f-sans);margin-bottom:8px;color:var(--muted)}
+.filename .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+
+/* Spotkanie */
+.meet-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
+@media (min-width:900px) and (max-width:1079px),(min-width:1260px){.meet-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.planner{background:var(--surface);padding:20px}
+.planner .n{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.planner .n output{font-family:var(--f-mono);font-size:58px;font-weight:500;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;min-width:2ch}
+.planner .n span{color:var(--ink-2)}
+input[type=range]{width:100%;accent-color:var(--red);margin:14px 0 6px;min-height:32px}
+.room{width:100%;height:auto;display:block;margin:10px 0 4px}
+.room .wall{fill:none;stroke:var(--ink);stroke-width:2}
+.room .tbl{fill:var(--surface-2)}
+.room .seat{fill:var(--ink-2)}
+.room .seat.mod{fill:var(--red)}
+.room .seat.sec{fill:var(--surface);stroke:var(--ink);stroke-width:2.5}
+.room text{fill:var(--muted);font-family:var(--f-mono);font-size:11px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:50%;display:inline-block;background:var(--ink-2)}
+.legend i.mod{background:var(--red)}
+.legend i.sec{background:var(--surface);box-shadow:inset 0 0 0 2.5px var(--ink)}
+.fmt-name{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-top:8px}
+.recs{display:grid;margin:12px 0 0;border-top:2px solid var(--ink)}
+.recs div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.recs dt{color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.recs dd{margin:0}
+.scen{display:grid;gap:3px}
+.scen article{background:var(--surface);padding:18px 20px}
+.scen header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.scen h3{font-size:18px}
+.scen p{margin:6px 0 12px;color:var(--ink-2);font-size:15px}
+.bars{display:flex;gap:2px;height:10px;margin-bottom:8px}
+.bars i{background:var(--ink)}
+.bars i:nth-child(even){background:var(--line-strong)}
+.scen .total{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+
+/* Tryb prowadzącego */
+.stage{position:fixed;inset:0;z-index:60;background:var(--st-bg);color:var(--st-ink);display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:12px;padding:calc(16px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));color-scheme:dark}
+.stage-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:13px;color:var(--st-muted);border-bottom:2px solid var(--st-line);padding-bottom:12px}
+.stage-top .who{display:flex;align-items:center;gap:12px}
+.stage-top svg{width:50px;height:18px}
+.stage-top b{color:var(--st-ink);font-weight:500}
+.stage-main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;align-items:center;min-height:0}
+@media (max-width:860px){.stage-main{grid-template-columns:1fr;gap:22px;align-content:start;overflow-y:auto}}
+.st-step{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--st-muted)}
+.st-title{font-size:clamp(30px,5vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1;margin:10px 0 0}
+.st-clock{font-family:var(--f-mono);font-weight:500;font-size:clamp(76px,17vw,210px);line-height:1;letter-spacing:-.05em;font-variant-numeric:tabular-nums;margin:20px 0 10px}
+.st-clock.over{color:var(--st-red)}
+.st-prog{height:10px;background:var(--st-line);max-width:660px;position:relative}
+.st-prog i{display:block;height:100%;background:var(--st-ink);width:0}
+.st-prog.over i{background:var(--st-red)}
+.st-hint{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:58ch;margin-top:24px;color:var(--st-ink)}
+.st-list{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:15px;align-self:center}
+.st-list li{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;padding:10px 12px;color:var(--st-muted)}
+.st-list li.cur{background:var(--st-2);color:var(--st-ink);box-shadow:inset 3px 0 0 var(--st-red)}
+.st-list li.past{opacity:.5;text-decoration:line-through}
+.st-list .no,.st-list .m{font-family:var(--f-mono);font-size:12px;padding-top:2px}
+.stage-ctl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;border-top:2px solid var(--st-line);padding-top:14px}
+.stage .btn{border-color:var(--st-ink);color:var(--st-ink)}
+.stage .btn:hover{background:var(--st-ink);color:var(--st-bg)}
+.stage .btn.primary{background:var(--st-ink);color:var(--st-bg)}
+.stage .kbd-help{font-family:var(--f-mono);font-size:12px;color:var(--st-muted);width:100%;text-align:center}
+.stage .kbd-help kbd{background:var(--st-2);border-color:var(--st-line);color:var(--st-ink)}
+@media (max-width:560px){.stage .kbd-help{display:none}}
+
+/* Zasady */
+.status-key{display:grid;gap:8px;background:var(--surface);padding:14px 18px;margin-bottom:18px;font-size:14.5px;color:var(--ink-2)}
+.status-key div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;align-items:baseline}
+@media (max-width:520px){.status-key div{grid-template-columns:1fr;gap:4px}}
+.rules-f .chips{gap:6px}
+.rules-f .chip{min-height:38px;padding:6px 11px;font-size:14px}
+.rgroup{border-top:2px solid var(--ink)}
+.rgroups{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+details.rg+details.rg{border-top:1px solid var(--line-strong)}
+details.rg summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:12px 4px;min-height:58px}
+details.rg summary::-webkit-details-marker{display:none}
+details.rg summary b{font-size:17.5px;font-weight:600}
+details.rg summary small{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:1px}
+details.rg summary .n{font-family:var(--f-mono);font-size:13px;color:var(--ink-2)}
+details.rg summary:hover{background:var(--surface)}
+details.rg[open] summary{border-bottom:1px solid var(--line)}
+details.rg .rrow{padding-left:4px;padding-right:4px}
+details.rg .rrow:last-child{border-bottom:0}
+.rules-f{display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap;margin-bottom:14px}
+.rrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:13px 2px;border-bottom:1px solid var(--line)}
+.rrow .txt{font-size:16px;line-height:1.5}
+.rrow .src{font-size:13px;color:var(--muted);margin:0;grid-column:1}
+.rrow .src .mono{color:var(--ink-2)}
+.rrow .st{grid-column:2;grid-row:1/3;align-self:start;padding-top:3px}
+@media (max-width:560px){.rrow{grid-template-columns:1fr}.rrow .st{grid-column:1;grid-row:auto;padding:4px 0 0}}
+.myths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;margin-top:12px}
+@media (max-width:700px){.myths{grid-template-columns:1fr}}
+.myth{background:var(--surface);padding:16px 18px;display:grid;gap:8px;align-content:start}
+.myth .mq{font-size:16px;font-weight:600;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+.myth .ma{font-size:15.5px;line-height:1.5}
+.myth .ma b{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-right:6px}
+.myth .ms{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.myth .ml{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+
+/* Kontakty */
+.contacts{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media (min-width:900px) and (max-width:1079px),(min-width:1260px){.contacts{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr)}}
+.guard{background:var(--ink);color:var(--on-ink);padding:24px;position:relative;overflow:hidden}
+.guard label{display:block;margin-bottom:8px;opacity:.8}
+.guard select{width:100%;background:transparent;color:inherit;border:2px solid var(--on-ink);padding:10px;font-size:16px;min-height:46px;border-radius:0}
+.guard select option{color:#201E1D;background:#FFFFFF}
+.guard .who{font-size:32px;font-weight:800;letter-spacing:-.03em;margin:22px 0 6px;line-height:1.05}
+.guard p{margin:0;opacity:.88;font-size:14.5px;max-width:42ch}
+.guard .reg{margin-top:16px;font-size:13px;opacity:.78;line-height:1.5}
+.matters{display:grid;gap:3px}
+.matter{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px;background:var(--surface);padding:14px 18px;align-items:start}
+.matter .q{font-weight:600}
+.matter .w{font-size:15px}
+.matter .w b{font-weight:700}
+.matter .w small{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+@media (max-width:620px){.matter{grid-template-columns:1fr;gap:4px}}
+.mailrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px;font-size:14.5px}
+
+/* Zmiany */
+.log{list-style:none;margin:0;padding:0;display:grid;max-width:860px;border-top:2px solid var(--ink)}
+.log li{display:grid;grid-template-columns:62px 26px minmax(0,1fr);align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)}
+.log time{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.log .mk{width:10px;height:10px;background:var(--ink);align-self:center}
+.log .mk.change{background:var(--red);clip-path:polygon(50% 0,100% 100%,0 100%);width:12px;height:11px}
+.log .mk.struct{background:transparent;box-shadow:inset 0 0 0 2px var(--ink)}
+.log .txt{font-size:15.5px}
+.log li.new .txt{font-weight:600}
+.log-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-2);margin-bottom:14px}
+.log-legend span{display:inline-flex;align-items:center;gap:8px}
+
+/* Stopka */
+.foot{border-top:2px solid var(--ink);padding:22px max(16px,env(safe-area-inset-right,0px)) 28px max(16px,env(safe-area-inset-left,0px));color:var(--muted);font-size:13.5px;line-height:1.55;max-width:1060px;margin:0 auto}
+@media (min-width:1080px){.foot{margin:0;padding:22px 44px 32px}}
+.foot p{margin:0 0 6px;max-width:90ch}
+.foot b{color:var(--ink)}
+
+/* Dolny pasek na telefonie */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--bg);border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+@media (min-width:1080px){.tabbar{display:none}}
+.tabbar a,.tabbar button{display:grid;justify-items:center;align-content:center;gap:3px;padding:7px 2px 8px;font-size:11.5px;font-weight:600;color:var(--ink-2);text-decoration:none;border:0;background:none;cursor:pointer;min-height:var(--tab-h);position:relative;line-height:1.1}
+.tabbar svg{width:22px;height:22px}
+.tabbar .on{color:var(--ink)}
+@media (max-width:360px){.tabbar a,.tabbar button{font-size:10px;letter-spacing:-.01em}}
+.tabbar .on::before{content:"";position:absolute;top:-2px;left:24%;right:24%;height:4px;background:var(--red)}
+
+/* Dialogi */
+.overlay{position:fixed;inset:0;z-index:50;background:var(--scrim);display:flex;align-items:flex-start;justify-content:center;padding:calc(10vh + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+.pal{width:100%;max-width:680px;background:var(--surface);border:2px solid var(--ink)}
+.pal .searchbox{border:0;border-bottom:2px solid var(--ink)}
+.pal .results{max-height:min(60vh,520px);overflow-y:auto}
+.pal-foot{display:flex;gap:16px;padding:10px 16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);flex-wrap:wrap}
+@media (max-width:560px){.overlay#pal{padding-top:calc(12px + env(safe-area-inset-top,0px))}.pal-foot{display:none}}
+.club{width:100%;max-width:460px;background:var(--surface);border:2px solid var(--ink);padding:24px;display:grid;gap:14px}
+.club h3{font-size:24px;font-weight:700}
+.club .acts{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.overlay.drawer{justify-content:flex-end;align-items:stretch;padding:0}
+.drawer-panel{width:min(380px,90vw);height:100%;background:var(--bg);overflow-y:auto;border-left:2px solid var(--ink);padding:calc(14px + env(safe-area-inset-top,0px)) 10px calc(24px + env(safe-area-inset-bottom,0px))}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;padding:0 6px 12px 12px;border-bottom:2px solid var(--ink);margin-bottom:10px}
+.drawer-top b{font-size:18px}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--on-ink);padding:12px 18px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:80;max-width:calc(100% - 32px)}
+@media (max-width:1079px){.toast{bottom:calc(var(--tab-h) + 14px + env(safe-area-inset-bottom,0px))}}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:no-preference){.view:not([hidden]){animation:fade .22s ease both}@keyframes fade{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#/" aria-label="Przewodnik Koordynatora, strona startowa">
+      <svg viewBox="0 0 200 72" aria-hidden="true"><rect x="0" y="0" width="200" height="12" fill="var(--ink)"/><polygon points="70,72 130,72 100,12" fill="#EC3013"/></svg>
+      <span class="t"><b>Przewodnik Koordynatora</b><small>Radykalne Centrum</small></span>
+    </a>
+    <button class="searchbtn" id="palBtn" type="button" aria-label="Szukaj w przewodniku"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="lbl">Szukaj: sytuacja, zasada, wzór wiadomości…</span><span class="short">Szukaj</span><kbd>/</kbd></button>
+    <button class="btn sm clubbtn" id="clubBtn" type="button" aria-label="Twój klub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="clubLbl">Twój klub</span></button>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="side" aria-label="Rozdziały przewodnika">
+    <ul class="navlist" data-nav></ul>
+    <div class="navclub" data-navclub></div>
+  </nav>
+
+  <main id="main">
+    <!-- START -->
+    <section class="view" id="v-start" data-view="start" aria-labelledby="h-start">
+      <div class="start-head">
+        <p class="ed">Wydanie 1 · dane na 14.10.2026</p>
+        <h1 id="h-start" tabindex="-1">Przewodnik Koordynatora</h1>
+        <p>Co zrobić, co napisać i jak poprowadzić spotkanie. Wszystko dla koordynatorów klubów w jednym miejscu.</p>
+      </div>
+      <div class="ask">
+        <label for="q">Opisz, co się dzieje w klubie</label>
+        <div class="searchbox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" autocomplete="off" placeholder="np. nikt nie przyszedł" aria-controls="qRes" aria-describedby="qHint">
+          <kbd aria-hidden="true">/</kbd>
+        </div>
+        <span id="qHint" class="sr">Wyniki pojawiają się pod polem w trakcie pisania. Enter otwiera pierwszy wynik.</span>
+        <ul class="results" id="qRes"></ul><span class="sr" id="qCount" aria-live="polite"></span>
+      </div>
+      <h2 class="tiles-h">Albo wybierz, czego potrzebujesz</h2>
+      <div class="tiles" id="tiles"></div>
+      <div class="clubcard" id="startClub"></div>
+      <div class="start-cols">
+        <div><h2 class="colh">Na skróty</h2><ul class="quick" id="quick"></ul></div>
+        <div><h2 class="colh">Nowe w październiku</h2><ul class="month" id="month"></ul><p style="margin:12px 0 0"><a class="link" href="#/zmiany">Wszystkie zmiany od lipca</a></p></div>
+      </div>
+    </section>
+
+    <!-- 30 DNI -->
+    <section class="view" id="v-30-dni" data-view="30-dni" aria-labelledby="h-30" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Pierwsze 30 dni</span></p>
+      <div class="vhead"><span class="no">01</span><h1 id="h-30" tabindex="-1">Pierwsze 30 dni</h1>
+        <p class="lede">Od pustego kanału do drugiego spotkania, krok po kroku. Kluby, które ruszyły najszybciej, zaczynały od konkretnej daty i miejsca.</p>
+        <p class="when"><b>Kiedy</b><span>Na początku koordynacji albo gdy klub startuje od nowa.</span></p></div>
+      <div id="nextStep"></div>
+      <div class="pathbar">
+        <div class="startdate"><label for="startDate">Data objęcia koordynacji:</label><input id="startDate" type="date"><span class="muted" id="startNote">Podaj datę, a przy krokach pojawią się daty z kalendarza.</span></div>
+        <div class="prog" aria-live="polite"><div class="lbl"><span>Zrobione</span><span><b id="progNum">0/13</b> kroków</span></div><div class="track"><i class="fill" id="progFill"></i></div></div>
+      </div>
+      <div id="tasks"></div>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="30-dni"></nav>
+    </section>
+
+    <!-- SYTUACJE -->
+    <section class="view" id="v-sytuacje" data-view="sytuacje" aria-labelledby="h-sit" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Co robić, gdy…</span></p>
+      <div class="vhead"><span class="no">02</span><h1 id="h-sit" tabindex="-1">Co robić, gdy…</h1>
+        <p class="lede">Sytuacje, które naprawdę zdarzyły się w klubach. Przy każdej: co zrobić, czego nie robić, do kogo się zwrócić.</p>
+        <p class="when"><b>Kiedy</b><span>Coś się dzieje w klubie i nie wiesz, co zrobić.</span></p></div>
+      <div class="sit-tools">
+        <div class="searchbox sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="sitQ" type="search" autocomplete="off" placeholder="Wpisz słowo, np. sala, WhatsApp, raport" aria-label="Szukaj wśród sytuacji"></div>
+        <div class="chips scrollchips" id="sitFilters" role="group" aria-label="Kategorie"></div>
+        <p class="count" id="sitCount" aria-live="polite"></p>
+      </div>
+      <div id="sits"></div>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="sytuacje"></nav>
+    </section>
+
+    <!-- WIADOMOŚCI -->
+    <section class="view" id="v-wiadomosci" data-view="wiadomosci" aria-labelledby="h-msg" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Gotowe wiadomości</span></p>
+      <div class="vhead"><span class="no">03</span><h1 id="h-msg" tabindex="-1">Gotowe wiadomości</h1>
+        <p class="lede">Wybierz rodzaj wiadomości, wpisz swoje dane i skopiuj gotowy tekst. Podgląd pokazuje, jak wiadomość będzie wyglądać na Discordzie.</p>
+        <p class="when"><b>Kiedy</b><span>Musisz coś ogłosić, przypomnieć, podsumować albo zgłosić centrali.</span></p></div>
+      <div class="picker" id="picker" role="group" aria-label="Rodzaj wiadomości"></div>
+      <div class="tinfo" id="tinfo"></div>
+      <div class="gen">
+        <form class="form" id="genForm" autocomplete="off" aria-label="Dane do wiadomości"></form>
+        <div class="preview">
+          <span class="pv-h">Podgląd</span>
+          <div class="dc" id="dc" aria-label="Podgląd wiadomości">
+            <div class="dc-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg><b id="dcChan">ogloszenia</b></div>
+            <div class="dc-msg"><div class="dc-av" id="dcAv" aria-hidden="true">K</div><div><div class="dc-name"><span id="dcName">Koordynator</span><small id="dcTime">Dziś</small></div><div class="dc-body" id="dcBody"></div></div></div>
+          </div>
+          <div class="filename" id="fileOut" hidden></div>
+          <div class="pv-actions"><button class="btn primary" type="button" id="copyGen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span id="copyLbl">Kopiuj tekst</span></button><span class="muted" id="pvHint"></span></div>
+        </div>
+      </div>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="wiadomosci"></nav>
+    </section>
+
+    <!-- SPOTKANIE -->
+    <section class="view" id="v-spotkanie" data-view="spotkanie" aria-labelledby="h-meet" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Spotkanie</span></p>
+      <div class="vhead"><span class="no">04</span><h1 id="h-meet" tabindex="-1">Spotkanie</h1>
+        <p class="lede">Dwa narzędzia: planer podpowie, jak rozstawić stoły i kogo potrzebujesz, a tryb prowadzącego zamieni telefon w zegar spotkania.</p>
+        <p class="when"><b>Kiedy</b><span>Przed spotkaniem i w jego trakcie.</span></p></div>
+      <div class="meet-grid">
+        <div>
+          <h2 class="blk">1. Ile osób przyjdzie?</h2>
+          <p class="blk-sub">Przesuń suwak. Zobaczysz układ stołów, potrzebne role i czas.</p>
+          <div class="planner">
+            <div class="n"><output id="nOut" for="nIn">9</output><span>osób potwierdziło udział</span></div>
+            <label class="sr" for="nIn">Liczba osób</label>
+            <input id="nIn" type="range" min="2" max="30" value="9">
+            <svg class="room" id="room" viewBox="0 0 640 250" role="img" aria-label="Układ stołów"></svg>
+            <div class="legend"><span><i class="mod"></i>prowadzący</span><span id="legSec"><i class="sec"></i>sekretarz</span><span><i></i>uczestnik</span></div>
+            <div class="fmt-name" id="fmtName"></div>
+            <dl class="recs" id="recs"></dl>
+          </div>
+        </div>
+        <div>
+          <h2 class="blk">2. Poprowadź z zegarem</h2>
+          <p class="blk-sub">Wybierz scenariusz i naciśnij „Rozpocznij”. Ekran pokaże krok, czas i podpowiedź, co powiedzieć.</p>
+          <div class="scen" id="scen"></div>
+        </div>
+      </div>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="spotkanie"></nav>
+    </section>
+
+    <!-- ZASADY -->
+    <section class="view" id="v-zasady" data-view="zasady" aria-labelledby="h-rules" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Zasady</span></p>
+      <div class="vhead"><span class="no">05</span><h1 id="h-rules" tabindex="-1">Zasady</h1>
+        <p class="lede">Ogłoszenia centrali zebrane w jednym miejscu, z datą i źródłem. Przewodnik je porządkuje, nie zastępuje.</p>
+        <p class="when"><b>Kiedy</b><span>Nie wiesz, czy coś wolno albo co dziś obowiązuje.</span></p></div>
+      <div class="status-key" aria-label="Co oznaczają znaczniki">
+        <div><span><span class="tag rule">Obowiązuje</span></span><span>Centrala ogłosiła to na piśmie.</span></div>
+        <div><span><span class="tag oral">Stanowisko ustne</span></span><span>Padło na spotkaniu, ale nie ma tego na piśmie.</span></div>
+        <div><span><span class="tag open">Nieustalone</span></span><span>Decyzji jeszcze nie ma. Zapytaj opiekuna.</span></div>
+      </div>
+      <div class="rules-f">
+        <div class="chips scrollchips" id="ruleFilters" role="group" aria-label="Pokaż"></div>
+        <button class="btn sm" type="button" id="ruleAll">Rozwiń wszystkie</button>
+      </div>
+      <div id="rules"></div>
+      <h2 class="grp" id="mity" style="margin-top:44px">Mity i fakty</h2>
+      <div class="myths" id="myths"></div>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="zasady"></nav>
+    </section>
+
+    <!-- KONTAKTY -->
+    <section class="view" id="v-kontakty" data-view="kontakty" aria-labelledby="h-cont" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Kontakty</span></p>
+      <div class="vhead"><span class="no">06</span><h1 id="h-cont" tabindex="-1">Kontakty</h1>
+        <p class="lede">Od 12 października każde województwo ma swojego opiekuna. Obok: gdzie zgłosić konkretną sprawę.</p>
+        <p class="when"><b>Kiedy</b><span>Nie wiesz, do kogo napisać.</span></p></div>
+      <div class="contacts">
+        <div class="guard">
+          <label for="woj" class="caps">Twoje województwo</label>
+          <select id="woj"></select>
+          <div class="who" id="guardWho">Wybierz województwo</div>
+          <p id="guardWhat">Opiekun z Zespołu Wsparcia Koordynacji pomaga w bieżących sprawach klubu.</p>
+          <p class="reg" id="guardReg"></p>
+        </div>
+        <div>
+          <h2 class="grp" style="margin-top:0">W jakiej sprawie</h2>
+          <div class="matters" id="matters"></div>
+          <div class="mailrow"><span class="muted">Oficjalny adres ruchu:</span><code id="mail">radykalne.centrum.kontakt@gmail.com</code><button class="btn sm" type="button" id="copyMail">Kopiuj</button></div>
+        </div>
+      </div>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="kontakty"></nav>
+    </section>
+
+    <!-- ZMIANY -->
+    <section class="view" id="v-zmiany" data-view="zmiany" aria-labelledby="h-log" hidden>
+      <p class="crumb"><a href="#/">Start</a><span aria-hidden="true">/</span><span>Zmiany</span></p>
+      <div class="vhead"><span class="no">07</span><h1 id="h-log" tabindex="-1">Co się zmieniło od lipca</h1>
+        <p class="lede">Od najnowszych. Pogrubione weszły w ostatnich dwóch tygodniach przed wydaniem.</p>
+        <p class="when"><b>Kiedy</b><span>Wracasz po przerwie i chcesz szybko nadrobić.</span></p></div>
+      <div class="log-legend"><span><i style="display:inline-block;width:10px;height:10px;background:var(--ink)"></i>nowa zasada</span><span><i style="display:inline-block;width:12px;height:11px;background:var(--red);clip-path:polygon(50% 0,100% 100%,0 100%)"></i>zmiana dotychczasowej</span><span><i style="display:inline-block;width:10px;height:10px;box-shadow:inset 0 0 0 2px var(--ink)"></i>struktura i ludzie</span></div>
+      <ol class="log" id="log"></ol>
+      <nav class="pager" aria-label="Sąsiednie rozdziały" data-pager="zmiany"></nav>
+    </section>
+
+    <footer class="foot">
+      <p><b>Przewodnik Koordynatora</b> · Sieć klubów Radykalnego Centrum · wydanie 1 · dane według stanu na 14 października 2026.</p>
+      <p>Źródła: ogłoszenia centrali na Discordzie (15.07–14.10.2026), dokumenty „Jak zrobić spotkanie” i „Raport ze spotkania”, spotkanie koordynatorów z prof. Matczakiem (22.09) oraz praktyki klubów podpisane nazwą miasta. Trudne sytuacje opisujemy bez nazwy klubu. Zasady obowiązują w brzmieniu z ogłoszeń centrali.</p>
+      <p>Masz sposób, który działa w Twoim klubie? Napisz na #dyskusja-koordynatorow. Najlepsze trafią do kolejnego wydania.</p>
+      <p>Opracowanie: Michał Tuczapski, Klub Wrocław. Wersja do konsultacji z Zespołem Wsparcia Koordynacji.</p>
+    </footer>
+  </main>
+</div>
+
+<nav class="tabbar" aria-label="Szybkie przejścia">
+  <a href="#/" data-tab="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Start</a>
+  <a href="#/sytuacje" data-tab="sytuacje"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg>Co robić</a>
+  <a href="#/wiadomosci" data-tab="wiadomosci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Wiadomości</a>
+  <a href="#/spotkanie" data-tab="spotkanie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>Spotkanie</a>
+  <button type="button" id="menuBtn" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Więcej</button>
+</nav>
+
+<div class="overlay drawer" id="menuDlg" hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+    <div class="drawer-top"><b id="menuTitle">Menu</b><button class="btn sm" type="button" id="menuClose">Zamknij</button></div>
+    <ul class="navlist" data-nav></ul>
+    <div class="navclub" data-navclub></div>
+  </div>
+</div>
+
+<div class="overlay" id="pal" hidden>
+  <div class="pal" role="dialog" aria-modal="true" aria-label="Szukaj w przewodniku">
+    <div class="searchbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palQ" type="search" autocomplete="off" placeholder="Sytuacja, zasada, wzór wiadomości…" aria-label="Szukaj" aria-controls="palRes"><button class="btn sm" type="button" id="palClose" style="margin-right:8px">Zamknij</button></div>
+    <ul class="results" id="palRes"></ul>
+    <div class="pal-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> wybór</span><span><kbd>Enter</kbd> otwórz</span><span><kbd>Esc</kbd> zamknij</span></div>
+  </div>
+</div>
+
+<div class="overlay" id="clubDlg" hidden>
+  <form class="club" id="clubForm" role="dialog" aria-modal="true" aria-labelledby="clubTitle">
+    <h3 id="clubTitle">Twój klub</h3>
+    <p class="muted" style="margin:0;font-size:14px">Zapisane tylko w tej przeglądarce. Uzupełnia gotowe wiadomości i pokazuje Twojego opiekuna.</p>
+    <div class="f"><label for="cMiasto">Miasto klubu (w mianowniku)</label><input id="cMiasto" placeholder="np. Gliwice"></div>
+    <div class="f"><label for="cWoj">Województwo</label><select id="cWoj"></select></div>
+    <div class="f"><label for="cImie">Twoje imię</label><input id="cImie" placeholder="np. Ola"></div>
+    <div class="acts"><button class="btn" type="button" id="clubCancel">Anuluj</button><button class="btn primary" type="submit">Zapisz</button></div>
+  </form>
+</div>
+
+<div class="stage" id="stage" hidden role="dialog" aria-modal="true" aria-label="Tryb prowadzącego">
+  <div class="stage-top"><span class="who"><svg viewBox="0 0 200 72" aria-hidden="true"><rect x="0" y="0" width="200" height="12" fill="#F3F2F2"/><polygon points="70,72 130,72 100,12" fill="#EC3013"/></svg><span><b id="stName">Spotkanie</b> · <span id="stTotal">00:00</span> z <span id="stPlan">0</span> min</span></span><span style="display:flex;gap:8px"><button class="btn sm" type="button" id="stFull">Pełny ekran</button><button class="btn sm" type="button" id="stClose">Zakończ</button></span></div>
+  <div class="stage-main">
+    <div>
+      <div class="st-step" id="stStep">Krok 1 z 7</div>
+      <div class="st-title" id="stTitle">Otwarcie</div>
+      <div class="st-clock" id="stClock" role="timer" aria-live="off">10:00</div>
+      <div class="st-prog" id="stProg"><i id="stBar"></i></div>
+      <div class="st-hint" id="stHint"></div>
+    </div>
+    <ol class="st-list" id="stList"></ol>
+  </div>
+  <div class="stage-ctl">
+    <button class="btn" type="button" id="stPrev">← Poprzedni</button>
+    <button class="btn primary" type="button" id="stPlay">Pauza</button>
+    <button class="btn" type="button" id="stAdd">+1 min</button>
+    <button class="btn" type="button" id="stNext">Następny →</button>
+    <div class="kbd-help"><kbd>Spacja</kbd> pauza · <kbd>→</kbd> następny · <kbd>←</kbd> poprzedni · <kbd>Esc</kbd> zakończ</div>
+  </div>
+</div>
+
+<button class="copyfab" id="copyFab" type="button" aria-label="Kopiuj gotowy tekst"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Kopiuj tekst</span></button>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+
+"use strict";
+/* ---------- narzędzia ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>String(s??"").toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"");
+const store={get(k,d){try{let v=localStorage.getItem("przewodnik:"+k);if(v==null)v=localStorage.getItem("almanach:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem("przewodnik:"+k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem("przewodnik:"+k);localStorage.removeItem("almanach:"+k)}catch(e){}}};
+const inline=s=>esc(s).replace(/`([^`]+)`/g,"<code>$1</code>");
+const pl=(n,f)=>{n=parseInt(n,10);if(isNaN(n))return f[2];const a=n%10,b=n%100;return n===1?f[0]:(a>=2&&a<=4&&(b<12||b>14))?f[1]:f[2]};
+const plOs=n=>pl(n,["osoba","osoby","osób"]);
+let toastT;function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove("show"),2400)}
+async function copyText(text){
+  try{await navigator.clipboard.writeText(text);toast("Skopiowano do schowka");return}catch(e){}
+  const ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
+  let ok=false;try{ok=document.execCommand("copy")}catch(e){}
+  document.body.removeChild(ta);toast(ok?"Skopiowano do schowka":"Nie udało się skopiować. Zaznacz tekst ręcznie.");
+}
+const ICON_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
+
+/* ---------- dane: województwa i opiekunowie (12.10.2026) ---------- */
+const GUARDS={"Krzysztof Szymkowiak":["wielkopolskie","mazowieckie","lubelskie","podlaskie","zagranica"],"Pecek":["łódzkie","kujawsko-pomorskie","podkarpackie","lubuskie"],"Krzysztof Kwarciak":["małopolskie","dolnośląskie","warmińsko-mazurskie","świętokrzyskie"],"BBE":["śląskie","pomorskie","zachodniopomorskie","opolskie"]};
+const WOJ=Object.entries(GUARDS).flatMap(([g,ws])=>ws.map(w=>[w,g])).sort((a,b)=>a[0]==="zagranica"?1:b[0]==="zagranica"?-1:a[0].localeCompare(b[0],"pl"));
+const guardOf=w=>(WOJ.find(x=>x[0]===w)||[])[1]||"";
+
+/* ---------- dane: sytuacje ---------- */
+const CATS={start:"Start klubu",ludzie:"Ludzie pytają",spotkanie:"Spotkanie",discord:"Discord i komunikacja",centrala:"Centrala i zasady",kryzys:"Gdy się sypie"};
+const SITS=[
+{id:"sam",cat:"start",t:"Jestem sam na kanale",kw:"pusto cisza nikt nie pisze jedyny pusty kanał sam jeden nowy klub milczy nikt nie odpisuje",
+ now:["Napisz pierwszą wiadomość z konkretną propozycją: data, godzina, miejsce. Pytanie „kiedy się spotkamy?” zwykle zostaje bez odpowiedzi.","Zajrzyj na #skąd-jesteś i #ogólny. Osoby z okolicy zaproś do klubu linkiem od KRC Bota (`!zaproszenie`).","Jeśli w okolicy jest większy klub, możecie na start dołączyć do niego. Można należeć do kilku klubów naraz."],
+ dont:"Nie zaczynaj od samego „dzień dobry”. W lipcu tak zaczynało kilkadziesiąt kanałów i prawie wszystkie umilkły.",
+ proof:"Białystok zapraszał osoby z całego regionu: „zapraszamy do nas, zanim stworzycie coś swojego”.",kind:"practice",go:{label:"Wzór pierwszej wiadomości",to:"tpl:pierwsza"}},
+{id:"ilu",cat:"start",t:"Nie wiem, ilu nas jest",kw:"liczba członków ile osób policzyć lista członków statystyka statystyki rola ilu bot",
+ now:["Na #kontakt-z-rc-team kliknij przycisk KRC Bota: otworzy się prywatny wątek (widzi go też administracja). Wpisz `!podsumowanie`. Dostaniesz liczbę osób z rolą klubu i liczbę postów z 1 i 7 dni.","Zrób apel na kanale: „zostaw reakcję, jeśli czytasz ten kanał”. Pokaże, kto realnie jest.","Planuj z założeniem, że aktywnych jest 10–25% zapisanych. Tak wyszło w Warszawie, Lublinie i Białymstoku."],
+ dont:"Nie licz osób z listy członków kanału. W kilku klubach nie dało się tak ustalić, kto naprawdę do nich należy.",
+ proof:"Gdańsk policzył się botem (03.08): 58 osób z rolą klubu, w tym 39 bez roli innego klubu.",kind:"practice"},
+{id:"troje",cat:"start",t:"Jest nas troje. Czy to ma sens?",kw:"mało osób trzy osoby za mało minimum próg czekać więcej dwie",
+ now:["Spotkajcie się. Trzy osoby to pełnoprawne spotkanie i najlepszy sposób, żeby było was więcej.","Wyznacz datę niezależnie od liczby zapisanych. Kluby, które czekały na komplet, straciły całe lato.","Po spotkaniu napisz krótko na kanale, o czym rozmawialiście. To przyciąga kolejne osoby."],
+ dont:"Nie ogłaszaj z góry progu („jeśli nie zbierze się 5 osób, przekładamy”). W dwóch klubach taki próg skończył się przełożeniem spotkania.",
+ proof:"Piła: 3 osoby, 2 godziny, „kto nie był, niech żałuje”. Warszawa: „To może być kilka osób 3, 4, 5 i to będzie udane spotkanie”.",kind:"practice"},
+{id:"sala",cat:"start",t:"Nie mam sali ani miejsca na spotkanie",kw:"sala miejsce lokal kawiarnia biblioteka gdzie za darmo koszt pomieszczenie znaleźć salę",
+ now:["Zapytaj na kanale, czy ktoś ma dostęp do sali: organizacja pozarządowa, uczelnia, dom kultury, własny lokal. W wielu klubach to członek otworzył drzwi.","Sprawdź: centrum organizacji pozarządowych, dom kultury lub MDK, miejskie centrum dialogu, uczelnię, kawiarnię z salą, w której każdy coś zamawia.","Do ok. 6–8 osób wystarczy stół w kawiarni. Od ok. 9 osób szukaj sali.","Sprawdź godziny bibliotek: w Gdańsku większość zamyka się o 17, ale Biblioteka Manhattan i warszawska Koszykowa zadziałały."],
+ dont:"Nie przedstawiaj klubu jako spotkania politycznego. Część instytucji jest „niechętna do spotkań zbyt silnie kojarzących się z polityką”, więc od razu powiedz, że to ponadpartyjne spotkania dyskusyjne.",
+ proof:"Bielsko-Biała i Katowice: centra organizacji pozarządowych. Gliwice: sala w MDK zarezerwowana do grudnia. Kraków: Miejskie Centrum Dialogu.",kind:"practice",go:{label:"Dobierz format do liczby osób",to:"#spotkanie"}},
+{id:"ankieta",cat:"spotkanie",t:"Nikt nie głosuje w ankiecie terminu",kw:"ankieta termin głosowanie doodle kiedy data nikt nie odpowiada reakcje",
+ now:["Zamiast pytać „kiedy?”, zaproponuj jeden termin i poproś o reakcje.","Używaj legendy: ❤️ będę, 👍 50:50, 👀 tym razem nie. Dodaj regułę: „jeśli do piątku będzie więcej 👀 niż ❤️, szukamy innego terminu”.","Jeśli robisz ankietę, ustaw ją na co najmniej 3–4 dni i przypnij. Ankiety Discorda wygasają same."],
+ dont:"Nie rób trzeciej rundy ankiet. Po dwóch zdecyduj.",proof:"Legenda reakcji i reguła piątkowa pochodzą z Lublina.",kind:"practice",go:{label:"Wzór ogłoszenia z legendą",to:"tpl:ogloszenie"}},
+{id:"polowa",cat:"spotkanie",t:"Wszyscy potwierdzili, przyszła połowa",kw:"frekwencja deklaracje nie przyszli potwierdzili mało osób odwołali",
+ now:["Proś o potwierdzenie 1–2 dni przed spotkaniem, nie tydzień wcześniej.","Przy limicie miejsc rób zapisy (formularz albo wydarzenie na Discordzie). Zapis działa lepiej niż reakcja.","Wyślij przypomnienie rano w dniu spotkania, z adresem i godziną."],
+ dont:"Nie traktuj tego jako porażki klubu. Deklaracje i obecność rozjeżdżają się wszędzie.",
+ proof:"Gdańsk (13.08): 15 z 17 osób zadeklarowanych w ankiecie. Poznań: zapisy z limitem miejsc dają realną frekwencję 6–8 osób.",kind:"practice",go:{label:"Wzór przypomnienia",to:"tpl:przypomnienie"}},
+{id:"nikt",cat:"kryzys",t:"Nikt nie przyszedł",kw:"nikt nie przyszedł pusto sam zero osób nie dotarli puste spotkanie",
+ now:["Napisz od razu na kanale, gdzie jesteś i do której czekasz. Ktoś mógł szukać was w innym miejscu.","Wyznacz nowy termin tego samego dnia. Nie zostawiaj kanału w ciszy.","Następnym razem: numer telefonu w ogłoszeniu, znak rozpoznawczy („centralny stolik”, „hasło KRC u obsługi”) i przypomnienie rano."],
+ dont:"Nie zamykaj klubu po jednej pustej próbie.",
+ proof:"Jeden z klubów pod Warszawą, 20.09: organizator czekał w kawiarni, a kilka minut przed startem ktoś pytał na kanale „czy ktoś planuje się pojawić dzisiaj?”. Nikt nie odpisał, a informacja, że spotkanie się nie odbyło, pojawiła się tydzień później.",kind:"practice"},
+{id:"tlum",cat:"spotkanie",t:"Przyszło 20 osób",kw:"dużo osób tłum za dużo 20 osób duża grupa podział stoliki",
+ now:["Podziel salę na stoliki po 4–6 osób. Przy każdym prowadzący i sekretarz.","Skróć wypowiedzi i poproś o konkretne propozycje zamiast opinii.","Na koniec wróćcie do wspólnego kręgu: każdy stolik mówi, na czym się zgodził i na czym nie."],
+ dont:"Nie prowadź 20 osób jako jednej rozmowy. Kraków (07.08): „rozproszona struktura wypowiedzi utrudniała bezpośrednie odnoszenie się do konkretnych tez”.",
+ proof:"Kraków poprawił to w trakcie spotkania krótszymi wypowiedziami: „modyfikacja ta znacząco zwiększyła dynamikę rozmowy”. Wrocław dzieli salę na grupy od początku.",kind:"practice",go:{label:"Planer stołów",to:"#spotkanie"}},
+{id:"drugie",cat:"spotkanie",t:"Drugie spotkanie się sypie",kw:"drugie spotkanie rytm termin kolejne spada regularność stały termin",
+ now:["Ustal stały termin, np. pierwszy poniedziałek miesiąca. Ankieta co miesiąc męczy wszystkich.","Zarezerwuj salę od razu na trzy miesiące do przodu.","Temat następnego spotkania wybierzcie na końcu poprzedniego."],
+ proof:"Gliwice: pierwszy poniedziałek miesiąca, sala do grudnia. Gdańsk: drugi czwartek. Kraków: sala zarezerwowana do grudnia.",kind:"practice"},
+{id:"whatsapp",cat:"discord",t:"Ludzie chcą przejść na WhatsApp",kw:"whatsapp messenger grupa komunikator przenieść discord trudny telegram signal",
+ now:["Oficjalna komunikacja klubu zostaje na Discordzie. Nowych grup klubowych na innych komunikatorach nie zakładamy.","Jeśli grupa już działa, zgłoś ją na #pytania-i-zgloszenia. Centrala zapowiada, że nic nie zostanie automatycznie zamknięte.","Każde ogłoszenie i tak publikuj na Discordzie, inaczej część osób wypadnie."],
+ dont:"Nie przenoś ustaleń poza Discord „bo tak wygodniej”. Osoby spoza grupy przegapiają spotkania.",
+ who:"#pytania-i-zgloszenia (Strefa Koordynatorów), centrala stara się odpowiedzieć w 48 h",rule:"prof. Matczak, 26.08 i 03.10",
+ proof:"W jednym z klubów po przejściu na WhatsApp członek napisał na Discordzie: „przegapiłem info o wczorajszym spotkaniu”.",kind:"rule",go:{label:"Wzór zgłoszenia",to:"tpl:zgloszenie"}},
+{id:"discord",cat:"discord",t:"Ktoś nie ogarnia Discorda",kw:"discord trudny nie umiem powiadomienia nie widzę starsi starsza osoba senior pomoc instrukcja aplikacja telefon włączyć powiadomienia",
+ now:["Wyślij tej osobie przypiętą ściągę klubu (wzór w „Gotowych wiadomościach”).","Najczęstszy problem to wyłączone powiadomienia. Pokaż ścieżkę: nazwa serwera → Ustawienia powiadomień, a przy kanale klubu „Wszystkie wiadomości”.","Wydarzenia w aplikacji na telefon są pod małą ikoną kalendarza obok wyszukiwarki.","Na pierwszym spotkaniu poświęć 5 minut na wspólne ustawienie Discorda."],
+ dont:"Nie zakładaj, że ktoś przeczytał ogłoszenie. Nawet koordynatorzy mieli wyłączone powiadomienia z własnego kanału.",
+ proof:"Tarnowskie Góry: w programie pierwszego spotkania była „nauka korzystania z Discorda”.",kind:"practice",go:{label:"Wzór przypiętej ściągi",to:"tpl:przypieta"}},
+{id:"pisac",cat:"discord",t:"Ktoś nie może pisać albo nie widzi klubu",kw:"nie mogę pisać nie widzę kanału brak roli rola patronite zablokowany wybrać miasto kanały i role nowy członek dołączyć nie ma mojego miasta",
+ now:["Niech wybierze swoje miasto w „Kanały i role” na samej górze listy kanałów. Rola i kanał klubu odblokują się same. Wpis na #skąd-jesteś nie nadaje roli.","W strefie ogólnej serwera piszą patroni. Bez wsparcia na Patronite można ją czytać, a na kanale klubu pisać normalnie.","Patron bez uprawnień: niech połączy konto na #patronite. Według serwisu połączenie kont może potrwać do 2 godzin.","Nie ma kanału jego miasta? O nowe koło pisze się do K. Szymkowiaka. Do tego czasu można dołączyć do najbliższego klubu."],
+ dont:"Nie wysyłaj `!zaproszenie` jako zapowiedzi spotkania. Ta komenda tworzy link zaproszeniowy do serwera, a nie ogłoszenie.",
+ who:"#wsparcie-techniczne, #patronite",rule:"prof. Matczak 02.08; Ł. Wolke 26.08",kind:"rule",go:{label:"Wzór przypiętej ściągi",to:"tpl:przypieta"}},
+{id:"wydarzenie",cat:"discord",t:"Chcę dodać spotkanie jako wydarzenie na Discordzie",kw:"wydarzenie wydarzenia kalendarz event krc bot zainteresowany zapisy dodać spotkanie strona",
+ now:["Napisz „wydarzenie” w prywatnej wiadomości do KRC Bota albo w swoim wątku z botem na #kontakt-z-rc-team. Bot pokaże przyciski do utworzenia i edycji.","Tytuł i opis pisz dla kogoś z zewnątrz: zrealizowane wydarzenia docelowo trafią na stronę ruchu.","Przed zapisaniem sprawdź datę i rok. Na serwerze widać wydarzenia z najbliższych 30 dni. Późniejsze pojawią się same 30 dni przed startem.","W ogłoszeniu poproś o kliknięcie „Zainteresowany”. Te osoby dostaną powiadomienie, gdy spotkanie się zacznie."],
+ dont:"Nie odkładaj poprawek. Wydarzenie można edytować do momentu rozpoczęcia, a spotkania dodanego po fakcie nie da się już zmienić.",
+ proof:"P. Jezierski, 06.10: „Prosimy, żebyście z tego korzystali, bo to realna poprawa infrastruktury, a nie dodatkowy obowiązek”. W październiku jedno z wydarzeń dostało przez pomyłkę rok 2020.",
+ rule:"Ł. Wolke 02.10; P. Jezierski 06.10",kind:"rule",go:{label:"Generator ogłoszenia",to:"tpl:ogloszenie"}},
+{id:"partia",cat:"ludzie",t:"„Czy to partia?”",kw:"partia polityka polityczny ruch hołownia wybory kandydat lista wyborcza",
+ answer:"Nie. Kluby Radykalnego Centrum to otwarta przestrzeń rozmowy ludzi o różnych poglądach. Prof. Matczak napisał wprost: „Nie tworzymy partyjnej struktury, narzuconych dogmatów ideologicznych ani zaplecza pod bieżącą walkę polityczną”. Wnioski ze spotkań mają trafiać do raportów i rekomendacji. Osoby, które szukają „twardej polityki partyjnej”, centrala prosi o realizowanie tych ambicji poza strukturami KRC.",
+ now:["Odpowiedz wprost, tekst do skopiowania jest wyżej.","Rozmawiamy o polityce, ale bez agitacji. Zasady serwera: unikamy promowania partii politycznych. Część klubów (Szczecin) idzie dalej i nie używa nazw partii."],
+ rule:"prof. Matczak, 26.08",proof:"Szczecin: „spotkania są o polityce, ale bez nazw partii czy ugrupowań”.",kind:"rule"},
+{id:"placic",cat:"ludzie",t:"„Czy muszę płacić?”",kw:"płacić patronite pieniądze opłata patron koszt darmowe wpłata",
+ answer:"Nie musisz. Kluby i spotkania są bezpłatne i otwarte dla każdego. Wsparcie na Patronite pozwala pisać w strefie ogólnej serwera, ale do udziału w klubie nie jest potrzebne.",
+ now:["Udział w klubie i spotkaniach jest bezpłatny.","Patronite daje możliwość pisania w strefie ogólnej serwera i dostęp do Strefy Patronów."],
+ rule:"prof. Matczak 02.08; P. Jezierski 19.08",kind:"rule"},
+{id:"ekspert",cat:"ludzie",t:"„Czy muszę się znać?”",kw:"ekspert wiedza przygotowanie nie znam się posłuchać nowy pierwszy raz boję",
+ answer:"Nie musisz być ekspertem ani się przygotowywać. Każdy ma swoje doświadczenia i to wystarczy. Możesz też przyjść tylko posłuchać.",
+ now:["Dopisz to zdanie do każdego ogłoszenia. Obniża próg wejścia.","Na początku spotkania zrób rundę, w której każdy mówi krótko. Cisi też wtedy zabierają głos."],
+ proof:"Białystok: „Nie musisz być »przygotowany«. Masz wiedzę życiową, która z pewnością wystarczy”. Poznań: „Nie trzeba być rodzicem ani ekspertem od edukacji”.",kind:"practice"},
+{id:"gosc",cat:"centrala",t:"Chcę zaprosić gościa: posła albo eksperta",kw:"gość poseł posłanka polityk ekspert zaproszenie prelegent radny minister specjalista",
+ now:["Zanim wyślesz zaproszenie, zgłoś to na #pytania-i-zgloszenia: kogo zapraszasz, czym się zajmował, jak go przedstawisz i na które spotkanie.","Gościa przedstawiaj przez to, czym się zajmował („były poseł, który zajmował się tym tematem”), a nie przez imię, nazwisko i obecną funkcję polityczną.","Gość przychodzi jako uczestnik, w swoim wolnym czasie. Nie jest celem spotkania i nie wygłasza wykładu.","Politycy i specjaliści są mile widziani: „Nie mamy żadnych przeciwwskazań, żeby w spotkaniach uczestniczyli byli, a nawet obecni politycy”. Osobne formaty, w których gość będzie w centrum uwagi, centrala planuje na później."],
+ dont:"Nie ogłaszaj gościa z nazwiskiem i funkcją na kanale ani w mediach.",
+ who:"#pytania-i-zgloszenia (Strefa Koordynatorów), centrala stara się odpowiedzieć w 48 h",rule:"prof. Matczak 03.10; P. Jezierski 04.10",kind:"rule",go:{label:"Wzór zgłoszenia",to:"tpl:zgloszenie"}},
+{id:"fanpage",cat:"centrala",t:"Chcemy założyć fanpage klubu",kw:"facebook fanpage instagram social media profil strona fb sociale",
+ now:["Profil klubu na Facebooku (fanpage) zakładamy tylko po wcześniejszym zgłoszeniu na #pytania-i-zgloszenia (pilotaż).","Obowiązuje standard: ogólne logo KRC bez herbów i wersji miejskich, szablonowy opis, link do Discorda, po spotkaniu post według schematu.","Po publikacji wrzuć link i zrzut ekranu na #screeny-postów.","Profil nie dyskutuje w komentarzach. Odpowiada tylko na pytania organizacyjne i odsyła do Discorda."],
+ dont:"Nie podawaj adresu spotkania w publicznym poście. Adres dostają zapisani.",
+ who:"Social media: Krzysztof Szymkowiak",rule:"#zasady-fb 19.08; logo 26.08; prof. Matczak 03.10",kind:"rule",go:{label:"Wzór posta po spotkaniu",to:"tpl:fb"}},
+{id:"zdjecie",cat:"ludzie",t:"Ktoś chce zdjęcie na Facebooka",kw:"zdjęcie zdjęcia wizerunek zgoda foto fotografia twarz publikacja rodo",
+ now:["Zapowiedz przed zdjęciem: „zdjęcie trafi na nasz profil, kto staje do zdjęcia, zgadza się na publikację”.","Kto nie chce, po prostu nie staje. Alternatywa: zdjęcie bez twarzy (stół, ręce, notatki).","Zdjęć zrobionych „na Discorda” nie publikuj na Facebooku bez nowej zgody."],
+ open:"Centrala nie wydała zasady w tej sprawie. To praktyka klubów.",proof:"Lublin: zapowiedź przed zdjęciem. Warszawa: zdjęcie tylko na Discorda, „nie publikujmy go”.",kind:"open"},
+{id:"nagrywanie",cat:"spotkanie",t:"Ktoś chce nagrywać spotkanie",kw:"nagrywanie nagranie transkrypcja audio wideo stream relacja zapis",
+ now:["Proponujemy domyślnie nie nagrywać. Przy włączonym nagraniu ludzie mówią ostrożniej.","Zamiast nagrania: notatka bez przypisywania wypowiedzi osobom, czytana na głos i zatwierdzana przez salę.","Jeśli już nagrywacie, to tylko za zgodą wszystkich obecnych, zapytanych przed startem."],
+ open:"Brak pisemnej zasady centrali dla spotkań klubowych. Centrala nie udostępniła nagrań swoich spotkań (27.07, 29.07, 22.09).",
+ proof:"Warszawa, 22.07: „nagrywanie spotkań jest złym pomysłem, ludzie unikają wtedy wypowiadania swoich myśli”. Gliwice doszły do tego samego.",kind:"open"},
+{id:"klotnia",cat:"kryzys",t:"Dwie osoby kłócą się na kanale",kw:"kłótnia konflikt spór obraża ad personam hejt troll kanał awantura moderacja",
+ now:["Obowiązek koordynatora (26.07): „upominajcie użytkowników w mniej poważnych sytuacjach, a w przypadku hejtu, trollingu czy niebezpiecznych linków od razu zgłaszajcie to moderacji”.","Zareaguj po pierwszej wymianie osobistej, nie po tygodniu. Krótko i publicznie: „wracamy do argumentów, nie do osób”.","Spór merytoryczny przenieś do osobnego wątku, osobisty do prywatnych wiadomości."],
+ dont:"Nie rozładowuj wyłącznie żartem. W jednym klubie konflikt wracał trzy razy przez miesiąc, zanim przyszło upomnienie.",
+ who:"Moderacja serwera (Diuk, Krystian, T. Pisarewski), w kłopocie oznacz @wsparcie",rule:"Obowiązki koordynatora, 26.07",kind:"rule"},
+{id:"dominacja",cat:"spotkanie",t:"Jedna osoba dominuje rozmowę",kw:"dominuje monolog gada za dużo przerywa cisi nie mówią",
+ now:["Zacznij od rundy, w której każdy mówi minutę. Ustawia to rytm na cały wieczór.","Ustal limit wypowiedzi i pilnuj go łagodnie, ale konsekwentnie.","Prowadzący nie dyskutuje. Jeśli chcesz się wypowiedzieć, oddaj na ten czas prowadzenie."],
+ proof:"Warszawa: „Zależało mi na tym, żeby każdy się wypowiedział przy każdej rundzie pytań”.",kind:"practice"},
+{id:"dryf",cat:"spotkanie",t:"Rozmowa odpływa w spór światopoglądowy",kw:"dryf odpływa zbacza z tematu kościół religia spór kulturowy frakcje",
+ now:["Zawęź pytanie na starcie. Zamiast ogólnego hasła wybierz konkretny przypadek.","Prowadź etapami: definicje, przypadki, wnioski.","Nazwijcie skrajności obecne w debacie publicznej, a potem szukajcie, gdzie jest centrum."],
+ proof:"P. Jezierski (relacja z Warszawy, 08.08): tematy o państwie i neutralności światopoglądowej „bez kontroli zakresu przesuwają rozmowę w stronę sporów kulturowych”. Gliwice pytają: jaki problem chcemy rozwiązać, jakie mamy dowody, czy narzędzie jest skuteczne.",kind:"practice"},
+{id:"zgoda",cat:"spotkanie",t:"Wszyscy się ze sobą zgadzają",kw:"wszyscy się zgadzają jednomyślność bańka podobne poglądy nudno",
+ now:["Zamiast sporu za i przeciw projektujcie razem rozwiązanie: jak wyglądałby system, który godzi skrajności?","Opiszcie bieguny sporu tak, jak opisaliby je ich zwolennicy, nawet jeśli nie ma ich przy stole.","Na kolejne spotkanie zaproście kogoś spoza bańki albo z grupy, której dotyczy temat."],
+ proof:"P. Jezierski (praktyka Warszawy, 19.07): gdy wszyscy są po tej samej stronie, „gramy do wspólnej bramki”, czyli wspólnie projektujemy najlepsze rozwiązanie. Warszawa, 10.09: trzy osoby z Ukrainy przy temacie relacji polsko-ukraińskich.",kind:"practice"},
+{id:"zniknal",cat:"kryzys",t:"Koordynator zniknął, chcę przejąć klub",kw:"koordynator nie odpowiada zniknął nieaktywny przejąć zmiana koordynatora brak",
+ now:["Napisz publicznie na kanale do koordynatora (jego login jest przy nazwie kategorii klubu) i równolegle do opiekuna województwa.","Jeśli przez tydzień nie ma odpowiedzi, zaproponuj termin i zapytaj grupę oraz opiekuna, czy możesz zorganizować spotkanie.","Zmianę koordynatora zgłoś na #kontakt-z-rc-team."],
+ dont:"Nie ogłaszaj „oficjalnego” spotkania na własną rękę. Za oficjalne uznaje się tylko spotkanie zorganizowane przez koordynatora albo z nim uzgodnione.",
+ who:"Opiekun województwa, potem #kontakt-z-rc-team",rule:"prof. Matczak 26.08 (oficjalne spotkanie)",
+ proof:"Gdynia, wrzesień–październik: aktywny członek zorganizował spotkanie dla 7 osób, zapytał publicznie o koordynację i dostał zgodę: „śmiało możesz przejąć rolę koordynatora”. Szczecin: po zmianie koordynatora dwa spotkania w pięć tygodni.",kind:"rule",go:{label:"Twój opiekun",to:"#kontakty"}},
+{id:"oddac",cat:"kryzys",t:"Chcę oddać klub",kw:"oddać rezygnacja rezygnuję nie mam czasu następca przekazać",
+ now:["Powiedz o tym na kanale z wyprzedzeniem i zapytaj, kto chce przejąć.","Przekaż następcy kontakty do sal, terminy i otwarte sprawy.","Zgłoś zmianę na #kontakt-z-rc-team i daj znać opiekunowi województwa."],
+ dont:"Nie znikaj bez słowa. Klub bez koordynatora gaśnie szybciej niż klub z trzema osobami.",who:"#kontakt-z-rc-team",kind:"practice"},
+{id:"laczyc",cat:"start",t:"Nasz klub jest mały. Dołączyć do sąsiadów?",kw:"łączenie sąsiedni klub mały połączyć dołączyć okolica region powiat",
+ now:["Na rozruch dołączcie do większego klubu w okolicy. Można należeć do kilku klubów.","Gdy zbierze się was więcej, wróćcie do własnego klubu.","Spotkania online z sąsiednim klubem też działają."],
+ rule:"Ł. Wolke, K. Szymkowiak 29.07: centrala nie wyznacza tymczasowych koordynatorów z sąsiedniego miasta",proof:"Wejherowo dołączyło do Gdyni, Włocławek do Torunia, Łomża działa z Białymstokiem online.",kind:"practice"},
+{id:"wypalenie",cat:"kryzys",t:"Nie wyrabiam się",kw:"wypalenie brak czasu nie mam czasu zmęczony za dużo pracy pomoc podział ról sam wszystko",
+ now:["Podziel rolę na trzy: koordynator (termin, sala, ogłoszenie), prowadzący (rozmowa), sekretarz (notatka).","Rotujcie prowadzących. Niech każde spotkanie prowadzi ktoś inny.","Spotykajcie się rzadziej, ale w stałym terminie."],
+ proof:"K. Szymkowiak, 14.10: „nie musisz robić wszystkiego sam/a (…) np. poprosić kogoś o spisanie raportu”. Piła: koordynacja w duecie. Białystok: czworo różnych prowadzących.",kind:"practice"},
+{id:"polska",cat:"centrala",t:"Czy musimy zrobić „Polską Szkołę” i do kiedy?",kw:"polska szkoła temat ogólnopolski obowiązkowy obowiązek termin do kiedy musimy tura edukacja",
+ now:["Na piśmie nie ma decyzji, że temat jest obowiązkowy. Ustnie (22.09) prof. Matczak: ma być „nie kijem, tylko marchewką”, ale „pewnym centrum waszej aktywności chociaż raz na miesiąc”.","Termin końcowy nie został ogłoszony. Tego samego dnia prof. Matczak zapowiedział: „My wyznaczymy jakąś datę końcową”, a jako przykład spotkań podał „do trzeciego tygodnia października”. Data „do końca października” z ogłoszeń w klubach nie pochodzi z pisma centrali.","Centrala nie wysyła tekstów do przeczytania. Rozmawiacie z własnej wiedzy i doświadczenia.","Raport powstaje na spotkaniu i trafia na forum jak najszybciej po nim. Od liczby raportów zależy termin kolejnego spotkania koordynatorów (08.10)."],
+ h:"Co wiadomo",open:"Brak pisemnej decyzji o obowiązkowości i o terminie końcowym. W razie wątpliwości zapytaj opiekuna województwa.",kind:"open",go:{label:"Tryb prowadzącego: temat ogólnopolski",to:"meet:ogolno"}},
+{id:"raport",cat:"centrala",t:"Mam oddać raport z tematu ogólnopolskiego",kw:"raport polska szkoła temat ogólnopolski formatka pdf edukacja oddać tura",
+ now:["Wypełniaj formatkę „Raport ze spotkania” w trakcie spotkania, nie po nim. Sekretarz (w formatce: sprawozdawca) czyta na głos po każdym kroku.","Zapisz jako PDF z nazwą `RRRR.MM.DD_Miasto_Polska_Szkoła.pdf`.","Dodaj jako komentarz pod postem „Polska Szkoła” na forum #tematy-ogólnopolskie, z dopiskiem: miasto, liczba osób, czas trwania.","Raport krąży na razie tylko wśród koordynatorów. Nie publikuj go na kanałach ogólnych ani w mediach."],
+ open:"Termin końcowy tury nie został ogłoszony.",who:"Uwagi do formatki: Piotr Jezierski",rule:"P. Jezierski 30.09, 01.10, 08.10",kind:"rule",go:{label:"Generator nazwy pliku",to:"tpl:plik"}},
+{id:"podsumowanie",cat:"centrala",t:"Mam napisać podsumowanie zwykłego spotkania",kw:"podsumowanie notatka relacja wnioski raport zwykły kanał podsumowania",
+ now:["Minimum: kto prowadził, ile osób, temat, główne wnioski.","Najpierw pokaż notatkę grupie i daj kilka dni na poprawki.","Opublikuj na #podsumowania-spotkań jako komentarz pod wątkiem tematu. Treść w tekście, nie tylko w PDF."],
+ rule:"P. Jezierski 08.08; K. Szymkowiak 28.08, 14.10",proof:"Wzór centrali (08.08): Przebieg, Wnioski, Uwagi. Najpełniej stosują go Gliwice (przebieg, wnioski i linie podziału, uwagi dla innych klubów). Krótsza wersja wniosków: karta 4 pól (zgoda, niezgoda, rekomendacja, pytanie bez odpowiedzi).",kind:"rule",go:{label:"Wzór notatki",to:"tpl:notatka"}},
+{id:"gdzie",cat:"centrala",t:"Nie wiem, gdzie to zgłosić",kw:"gdzie zgłosić kontakt kto odpowiada pomoc administracja opiekun",
+ now:["Bieżące sprawy klubu: opiekun Twojego województwa.","Komunikator, fanpage, gość: #pytania-i-zgloszenia.","Bot, linki, wydarzenia, zmiana koordynatora: #kontakt-z-rc-team.","Zanim napiszesz do administracji, zajrzyj do FAQ w przewodniku po serwerze."],kind:"rule",rule:"K. Szymkowiak 12.10; prof. Matczak 03.10; FAQ 18.09",go:{label:"Mapa kontaktów",to:"#kontakty"}}
+];
+
+/* ---------- dane: ścieżka 30 dni ---------- */
+const PATH=[
+{id:"p1",d:1,t:"Przedstaw się i podaj pierwszy termin",why:"Najszybsze starty (1–4 dni) zaczynały się od wiadomości z datą, godziną i miejscem.",steps:["Kilka zdań o sobie: kim jesteś, czemu się w to angażujesz.","Jedna konkretna propozycja terminu i miejsca, nawet orientacyjna.","Prośba o niewiążącą reakcję."],tools:[["Wzór pierwszej wiadomości","tpl:pierwsza"]]},
+{id:"p2",d:1,t:"Uporządkuj kanał klubu",why:"Najczęstsze źródło chaosu: ludzie „nie widzieli” ogłoszenia.",steps:["Jeśli klub ma kanał ogłoszeń, ustaw go tylko do odczytu. Nowe kluby dostają go po pierwszym spotkaniu, na zgłoszenie do K. Szymkowiaka.","Przypnij ściągę: jak dołączyć, jak włączyć powiadomienia, że udział jest bezpłatny.","Sam włącz powiadomienia ze wszystkich kanałów klubu."],tools:[["Wzór przypiętej ściągi","tpl:przypieta"]]},
+{id:"p13",d:2,t:"Wejdź w strukturę koordynatorów",why:"Zmiany centrala ogłasza w Strefie Koordynatorów. Kto jej nie śledzi, dowiaduje się ostatni.",steps:["Napisz do opiekuna swojego województwa: kim jesteś i jaki klub prowadzisz.","Włącz powiadomienia w Strefie Koordynatorów: #ogloszenia-koordynatorzy, #dyskusja-koordynatorow, #pytania-i-zgloszenia, forum #tematy-ogólnopolskie.","Przejrzyj FAQ w przewodniku po serwerze: „Zanim napiszecie do administracji, zajrzyjcie właśnie tam” (18.09).","Sprawdź, czy przy nazwie kategorii klubu widać Twój login. Jeśli nie, zgłoś to na #kontakt-z-rc-team."],tools:[["Twój opiekun","#kontakty"]]},
+{id:"p3",d:2,t:"Policz ludzi i zaproś okolicę",why:"Aktywnych jest zwykle 10–25% osób z rolą klubu.",steps:["W wątku z KRC Botem (przycisk na #kontakt-z-rc-team) wpisz `!podsumowanie`.","Przejrzyj #skąd-jesteś i zaproś osoby z okolicy.","Wygeneruj link `!zaproszenie` i wyślij znajomym, także tym o innych poglądach."],tools:[["Karta: nie wiem, ilu nas jest","sit:ilu"]]},
+{id:"p4",d:4,t:"Znajdź miejsce",why:"Miejsce to najczęstsze wąskie gardło. Często rozwiązuje je członek z dostępem do sali.",steps:["Zapytaj na kanale, kto ma dostęp do sali.","Zadzwoń do centrum organizacji pozarządowych, domu kultury albo kawiarni z salą.","Sprawdź godziny: wieczorem wiele instytucji jest zamkniętych."],tools:[["Karta: nie mam sali","sit:sala"]]},
+{id:"p5",d:5,t:"Ogłoś pierwsze spotkanie",why:"Ogłoszenie z pełnymi danymi i zdaniem „nie musisz być ekspertem” obniża próg wejścia.",steps:["Data, godzina, adres z dojazdem, temat jako pytanie, sposób potwierdzenia, telefon.","Dodaj wydarzenie przez KRC Bota: napisz mu „wydarzenie”.","Na pierwsze spotkanie wybierz lekki albo lokalny temat."],tools:[["Generator ogłoszenia","tpl:ogloszenie"],["Karta: wydarzenie na Discordzie","sit:wydarzenie"]]},
+{id:"p6",d:8,t:"Podziel role",why:"Gdy wszystko jest w rękach koordynatora, spotkanie pada razem z nim.",steps:["Prowadzący: dba o przebieg i czas.","Sekretarz: notuje i czyta na głos po każdym etapie.","Na pierwszym spotkaniu może to być Ty i jedna osoba."],tools:[["Karta: nie wyrabiam się","sit:wypalenie"]]},
+{id:"p7",d:13,t:"Przypomnij dzień wcześniej",why:"Deklaracje i obecność się rozjeżdżają. Przypomnienie z adresem zmniejsza różnicę.",steps:["Adres, sala, godzina, znak rozpoznawczy, telefon.","Oznacz rolę klubu (@KRC Miasto), nie @everyone.","Rano w dniu spotkania krótkie przypomnienie jeszcze raz."],tools:[["Wzór przypomnienia","tpl:przypomnienie"]]},
+{id:"p8",d:14,t:"Poprowadź pierwsze spotkanie",why:"Na pierwszym spotkaniu ustalacie, jak klub będzie działał. Temat jest na drugim miejscu.",steps:["Powitanie, przedstawienie się, zasady rozmowy.","Krótka dyskusja na lekki temat.","Ustalcie rytm, miejsce i temat następnego spotkania."],tools:[["Tryb prowadzącego","meet:pierwsze"]]},
+{id:"p9",d:16,t:"Notatka do akceptacji grupy",why:"Nieobecni pytają o wnioski. Brak notatki zniechęca do kolejnego razu.",steps:["Przebieg, wnioski i uwagi dla innych klubów. Do tego kto prowadził, ile osób, następny termin.","Daj grupie kilka dni na poprawki.","Potem opublikuj na #podsumowania-spotkań.","Jeśli klub nie ma kanału ogłoszeń i głosowego, poproś o nie K. Szymkowiaka."],tools:[["Wzór notatki","tpl:notatka"]]},
+{id:"p10",d:21,t:"Odpowiedz każdemu nowemu",why:"W wielu kanałach pytania nowych osób zostały bez odpowiedzi.",steps:["Przejrzyj kanał i odpowiedz na każde pytanie.","Przypnij termin drugiego spotkania.","Napisz osobno do osób, które były na pierwszym."],tools:[["Karta: „czy muszę się znać?”","sit:ekspert"]]},
+{id:"p11",d:28,t:"Drugie spotkanie",why:"To jest test. Frekwencja zwykle spada, terminy się sypią.",steps:["Potwierdzenie obecności 1–2 dni wcześniej.","Wyznacz prowadzącego innego niż Ty.","Na koniec wybierzcie temat kolejnego."],tools:[["Karta: drugie spotkanie się sypie","sit:drugie"]]},
+{id:"p12",d:30,t:"Stały termin i sala na trzy miesiące",why:"Stały termin i sala z góry kończą comiesięczne ankiety. Tak działają Gdańsk (drugi czwartek) i Kraków (sala do grudnia).",steps:["Ustalcie stały dzień, np. pierwszy poniedziałek miesiąca.","Zarezerwuj salę do końca kwartału.","Napisz opiekunowi województwa krótko, jak idzie."],tools:[["Mapa kontaktów","#kontakty"]]}
+];
+
+/* ---------- dane: zasady ---------- */
+/* status: ok = obowiązuje (spisane), oral = stanowisko ustne, open = nieustalone */
+const AREAS={rola:"Rola koordynatora",kom:"Komunikacja",spot:"Spotkania",goscie:"Goście",rap:"Raporty",sm:"Social media",toz:"Tożsamość",czl:"Członkowie"};
+const STATUS={ok:["rule","Obowiązuje"],oral:["oral","Stanowisko ustne"],open:["open","Nieustalone"]};
+const RULES=[
+["rola","Moderujesz czat klubu: upominasz w mniej poważnych sytuacjach, a hejt, trolling i niebezpieczne linki od razu zgłaszasz moderacji.","26.07","ogłoszenie dla koordynatorów","ok"],
+["rola","Zaglądasz na #ogólny i #skąd-jesteś i zapraszasz osoby z Twojego miasta.","26.07","ogłoszenie dla koordynatorów","ok"],
+["rola","W naborze nowych koordynatorów centrala wymaga aktywnego wsparcia na Patronite („zależy nam, by koordynator był patronem”). Pełne wymagania są w przygotowaniu.","14.10","K. Szymkowiak, ogłoszenie naboru","ok"],
+["rola","Do zadań koordynatora należy raportowanie: „krótkim podsumowaniem minionych spotkań”.","14.10","K. Szymkowiak, ogłoszenie naboru","ok"],
+["rola","Koordynator może zakładać kanały w kategorii klubu i ustawiać ich uprawnienia. Osobne kanały ogłoszeń i głosowy klub dostaje po pierwszym spotkaniu, na zgłoszenie do K. Szymkowiaka.","26.07, 08.09","Ł. Wolke; ogłoszenie z 08.09","ok"],
+["rola","Jedna rola „Koordynator Koła” z uprawnieniami do zarządzania klubem. Przy nazwie kategorii klubu widać login koordynatora.","15.09","Ł. Wolke","ok"],
+["rola","Centrala nie wyznacza tymczasowych koordynatorów z sąsiedniego miasta.","29.07","Ł. Wolke, K. Szymkowiak","ok"],
+["kom","Discord to jedyne oficjalne centrum komunikacji. Nowych grup klubowych na innych komunikatorach nie zakładamy.","26.08, 03.10","prof. Matczak","ok"],
+["kom","„Najpierw przekaz informacji, potem decyzja”: fanpage, gościa i istniejące grupy zgłaszamy na #pytania-i-zgloszenia. Nic nie zostanie automatycznie zamknięte. Centrala stara się odpowiedzieć w 48 h.","03.10","prof. Matczak","ok"],
+["kom","Nie używamy @everyone. Ogłoszenie do klubu: oznacz rolę @KRC Miasto.","28.07, 06.10","P. Jezierski (bez @everyone); Ł. Wolke (rola klubu)","ok"],
+["kom","Discord nie udostępnia maili członków, a masowe wiadomości prywatne są blokowane.","06.10","Ł. Wolke","ok"],
+["kom","Zanim napiszesz do administracji, sprawdź FAQ w przewodniku po serwerze.","18.09","ogłoszenie serwerowe","ok"],
+["kom","Rytm spotkań koordynatorów z centralą.","","","open"],
+["spot","Oficjalne spotkanie to spotkanie zorganizowane przez koordynatora lub wcześniej z nim uzgodnione. Podgrupy działają w porozumieniu z nim i są ogłaszane na Discordzie.","26.08","prof. Matczak","ok"],
+["spot","Klub ma pełną swobodę w doborze tematów. Tematy z „Prawem i Rozumem” to inspiracje.","19.08, 04.09","P. Jezierski","ok"],
+["spot","Temat ogólnopolski: na piśmie brak decyzji, czy jest obowiązkowy. Ustnie: ma być „nie kijem, tylko marchewką”, ale „pewnym centrum waszej aktywności chociaż raz na miesiąc”.","22.09","prof. Matczak, wypowiedź ustna (nieoficjalna transkrypcja)","oral"],
+["spot","Online tylko wtedy, gdy spotkanie na żywo jest niemożliwe: z włączonymi kamerami, w niewielkiej grupie (nie 30–50 osób).","22.09","prof. Matczak, wypowiedź ustna","oral"],
+["spot","Spotkanie na uczelni musi być otwarte dla wszystkich, nie tylko dla studentów.","26.08","relacja członka klubu w Lublinie, nie ogłoszenie","oral"],
+["spot","Wydarzenia tworzymy przez KRC Bota (napisz mu „wydarzenie”). Na serwerze widać te z najbliższych 30 dni. Można dodać też spotkanie, które już się odbyło, ale takiego wydarzenia nie da się edytować. Zrealizowane wydarzenia docelowo trafią na stronę.","02.10, 06.10","Ł. Wolke; P. Jezierski prosi o korzystanie","ok"],
+["spot","Nagrywanie spotkań klubowych.","","","open"],
+["goscie","Zaproszenie gościa zgłaszamy, zanim zostanie wysłane: kogo, czym się zajmował i jak zostanie przedstawiony.","03.10","prof. Matczak","ok"],
+["goscie","Gość przychodzi jako osoba, nie przedstawiciel instytucji. Przedstawiamy go przez to, czym się zajmował.","03.10, 04.10","prof. Matczak; P. Jezierski","ok"],
+["goscie","Gość nie jest celem spotkania. Nie zapraszamy prelegenta z wykładem.","04.10","P. Jezierski; „Jak zrobić spotkanie”","ok"],
+["rap","Formalnie „nic nie jest obowiązkowe”, ale krótkie podsumowanie spotkań należy do zadań koordynatora. Minimum: kto prowadził, ile osób, temat, wnioski.","28.08, 14.10","gymo; K. Szymkowiak","ok"],
+["rap","Zwykłe spotkanie: podsumowanie na #podsumowania-spotkań jako komentarz pod wątkiem tematu (przebieg, wnioski, uwagi).","08.08","P. Jezierski","ok"],
+["rap","Temat ogólnopolski: formatka, PDF `RRRR.MM.DD_Miasto_Polska_Szkoła.pdf`, komentarz pod postem „Polska Szkoła” na forum #tematy-ogólnopolskie z dopiskiem: miasto, liczba osób, czas.","01.10","P. Jezierski","ok"],
+["rap","Raporty ogólnopolskie na razie krążą tylko wśród koordynatorów.","30.09","P. Jezierski","ok"],
+["rap","Termin końcowy tury „Polska Szkoła”.","","","open"],
+["sm","Lokalny profil (fanpage) tylko po wcześniejszym zgłoszeniu.","03.10","prof. Matczak","ok"],
+["sm","Na profilu tylko ogólne logo KRC, bez herbów i wersji miejskich.","26.08","P. Jezierski","ok"],
+["sm","Profil klubu nie dyskutuje w komentarzach. Odpowiada na pytania organizacyjne i odsyła do Discorda.","19.08","#zasady-fb","ok"],
+["sm","Post po spotkaniu: kiedy i ile osób, temat i wnioski, pytanie do odbiorców, zaproszenie na serwer Discord. Link i zrzut na #screeny-postów.","19.08","#zasady-fb","ok"],
+["sm","Zgoda na wizerunek i publikację zdjęć.","","","open"],
+["toz","Fundacja „Radykalne Centrum” to odrębny podmiot.","25.07","prof. Matczak przez K. Szymkowiaka","ok"],
+["toz","Obecne logo jest techniczne i przejściowe.","24.08","P. Jezierski","ok"],
+["toz","Osoby, które szukają „twardej polityki partyjnej czy budowania zamkniętych frakcji”, centrala prosi o realizowanie tych ambicji poza strukturami KRC.","26.08","prof. Matczak","ok"],
+["toz","Nazwa „Kluby Radykalnego Centrum” jako odróżnienie od fundacji.","","","open"],
+["czl","Miasto wybiera się w „Kanały i role”. Wpis na #skąd-jesteś nie nadaje roli.","26.08","Ł. Wolke","ok"],
+["czl","Można należeć do kilku klubów naraz.","23.07","P. Jezierski","ok"],
+["czl","Udział w klubach jest bezpłatny i otwarty. W strefie ogólnej piszą patroni.","02.08","prof. Matczak","ok"]
+];
+
+/* ---------- dane: mity ---------- */
+const MYTHS=[
+["Raport ze spotkania jest obowiązkowy.","Formalnie nie („Generalnie nic nie jest obowiązkowe”, gymo). Ale krótkie podsumowanie każdego spotkania należy do zadań koordynatora: kto prowadził, ile osób, temat, wnioski. Przy temacie ogólnopolskim wypełniona formatka.","gymo, K. Szymkowiak · 28.08, 14.10"],
+["Nie wolno rozmawiać o tematach z „Prawem i Rozumem”.","Wolno. „Zero banów”, tematy profesora to inspiracje.","P. Jezierski · 19.08, 04.09"],
+["Wpis na #skąd-jesteś dodaje mnie do klubu.","Nie. Miasto wybierasz sam w „Kanały i role”.","Ł. Wolke · 26.08"],
+["@here powiadomi tylko mój klub.","Niekoniecznie: 28.07 zgłaszano, że @here działa na cały serwer. Pewniej oznaczyć rolę @KRC Miasto. @everyone trafia do wszystkich.","Ł. Wolke · 28–29.07, 06.10"],
+["Mogę zaprosić polityka i ogłosić go z funkcją.","Najpierw zgłoszenie, potem zaproszenie. Gościa przedstawiamy przez to, czym się zajmował.","prof. Matczak · 03.10"],
+["Mogę założyć grupę klubu na WhatsAppie.","Nowych grup klubowych na innych komunikatorach nie zakładamy. Istniejące zgłaszamy.","prof. Matczak · 03.10"],
+["Na fanpage’u użyję herbu miasta.","Nie. Herby często są chronione prawnie. Używamy ogólnego logo.","#zasady-fb · 19.08, 26.08"],
+["Żeby przyjść na spotkanie, trzeba płacić.","Nie. Kluby są otwarte i bezpłatne dla każdego.","prof. Matczak · 02.08"],
+["Koordynator musi wszystko robić sam.","Nie musi i nie powinien: „nie musisz robić wszystkiego sam/a (…) np. poprosić kogoś o spisanie raportu”.","K. Szymkowiak · 14.10"]
+];
+
+/* ---------- dane: kontakty ---------- */
+const MATTERS=[
+["Bieżące sprawy klubu","Opiekun Twojego województwa","Od 12.10."],
+["Grupa na komunikatorze, fanpage, zaproszenie gościa","#pytania-i-zgloszenia","Napisz: co, w jakim celu, kogo dotyczy. Centrala stara się odpowiedzieć w 48 h. Od 03.10."],
+["Raport z tematu ogólnopolskiego","Forum #tematy-ogólnopolskie, post „Polska Szkoła”","Uwagi do formatki: Piotr Jezierski. Od 01.10."],
+["Podsumowanie zwykłego spotkania","#podsumowania-spotkań","Komentarz pod wątkiem tematu. Od 08.08."],
+["Link zaproszeniowy, statystyki klubu, wydarzenie","KRC Bot (dawniej RC_Boot): przycisk na #kontakt-z-rc-team","Bot otwiera prywatny wątek, który widzi też administracja. Komendy: `!help`, `!zaproszenie`, `!podsumowanie`, „wydarzenie”. W kłopocie oznacz @wsparcie."],
+["Zmiana koordynatora","#kontakt-z-rc-team","Tak wskazała moderacja (10.10)."],
+["Social media klubu","Krzysztof Szymkowiak","Od 08.09."],
+["Nowy klub, osobne kanały ogłoszeń i głosowy","Krzysztof Szymkowiak","Kanały dla klubów po co najmniej jednym spotkaniu. Od 08.09."],
+["Członek nie ma roli, nie może pisać, Patronite","#wsparcie-techniczne, #patronite","Miasto wybiera się w „Kanały i role”. Połączenie z Patronite może potrwać do 2 h."],
+["Uwagi do zasad i formatki","Formatka: Piotr Jezierski. Zasady: #pytania-i-zgloszenia","Centrala prosi o sygnał, „jeśli coś w tych zasadach Wam nie odpowiada” (03.10). Wzór w „Gotowych wiadomościach”."],
+["Hejt, trolling, niebezpieczne linki","Moderacja serwera (Diuk, Krystian, T. Pisarewski)","Zgłaszaj od razu. Od 26.07."],
+["Pytanie do profesora","#zapytaj-profesora","Forum dla patronów."]
+];
+
+/* ---------- dane: dziennik zmian ---------- */
+const LOG=[
+["14.10","Nabór koordynatorów: wymaganie aktywnego wsparcia na Patronite. Raportowanie wśród zadań koordynatora.","rule"],
+["12.10","Każde województwo ma opiekuna z Zespołu Wsparcia Koordynacji.","struct"],
+["10.10","KRC Bot zamiast RC_Boot: przycisk na #kontakt-z-rc-team otwiera prywatny wątek z botem.","change"],
+["08.10","Apel o raporty z „Polskiej Szkoły”. Termin kolejnego spotkania koordynatorów zależy od raportów.","rule"],
+["06.10","Apel o tworzenie wydarzeń klubowych przez KRC Bota.","rule"],
+["04.10","Zasady dotyczące gości na spotkaniach.","rule"],
+["03.10","Procedura „najpierw przekaz informacji, potem decyzja”: profile, goście i istniejące grupy zgłaszamy; nowych grup na komunikatorach nie zakładamy.","rule"],
+["02.10","Wydarzenia klubowe tworzone przez KRC Bota.","rule"],
+["01.10","Forum na raporty „Polska Szkoła” i nazewnictwo plików.","rule"],
+["30.09","Raporty ogólnopolskie na razie tylko w obiegu koordynatorów.","rule"],
+["27.09","Formatka „Raport ze spotkania” i poradnik „Jak zrobić spotkanie”.","rule"],
+["22.09","Spotkanie koordynatorów z profesorem. Pierwszy temat ogólnopolski: szkoła.","struct"],
+["18.09","Kanał FAQ, nowa moderacja, Zespół Wsparcia Koordynacji.","struct"],
+["15.09","Jedna rola „Koordynator Koła” z uprawnieniami do zarządzania klubem, login koordynatora przy nazwie kategorii. Wiadomości centrali do koordynatorów nadal oznaczają rolę @Koordynator Klubu.","change"],
+["08.09","Osobne kanały ogłoszeń i głosowy tylko dla klubów po co najmniej jednym spotkaniu. Social media przejmuje K. Szymkowiak.","change"],
+["26.08","Standard organizacyjny: Discord jako jedyne centrum, definicja oficjalnego spotkania, podgrupy. Logo w wersjach miejskich odwołane.","change"],
+["19.08","Swoboda tematów („zero banów”). Standard fanpage’y klubowych.","rule"],
+["08.08","#podsumowania-spotkań jako archiwum raportów.","rule"],
+["04.08","Linki zaproszeniowe do klubu przez bota.","rule"],
+["02.08","Serwer otwarty dla wszystkich. Pisanie w strefie ogólnej dla patronów.","change"],
+["28.07","Bez @everyone w klubach; do ogłoszeń rola klubu. Misja, wizja i cele w Przewodniku po serwerze.","rule"],
+["26.07","Pierwsza spisana lista obowiązków koordynatora.","rule"],
+["25.07","Sprawy klubów kierujemy do K. Szymkowiaka.","struct"]
+];
+
+/* ---------- dane: w tym miesiącu ---------- */
+const MONTH=[
+["01.10","Raporty z tematu „Polska Szkoła” trafiają na forum #tematy-ogólnopolskie. Do 13.10 wpłynęło 5. Termin końcowy nie został ogłoszony.","sit:polska","Co wiadomo →"],
+["03.10","Procedura „najpierw przekaz informacji, potem decyzja”: fanpage i gościa najpierw zgłaszamy na #pytania-i-zgloszenia. Nowych grup na komunikatorach nie zakładamy.","sit:gosc","Jak zgłosić →"],
+["06.10","Centrala prosi o dodawanie spotkań jako wydarzeń przez KRC Bota.","sit:wydarzenie","Jak to zrobić →"],
+["12.10","Każde województwo ma opiekuna z Zespołu Wsparcia Koordynacji.","#kontakty","Sprawdź swojego →"]
+];
+
+/* ---------- dane: scenariusze spotkań ---------- */
+const SCEN={
+pierwsze:{n:"Pierwsze spotkanie klubu",src:"Agenda z Gliwic",desc:"Poznajecie się i ustalacie, jak klub będzie działał. Temat jest lekki.",steps:[
+ ["Powitanie i idea klubu",10,"Powiedz w dwóch zdaniach, czym są kluby: otwarte, ponadpartyjne rozmowy z ludźmi, którzy myślą inaczej. Podziękuj za przyjście."],
+ ["Przedstawienie się",20,"Każdy mówi minutę: kim jest i co go tu przywiodło. Prowadzący pilnuje czasu, ale łagodnie."],
+ ["Zasady rozmowy",10,"Ustalcie razem 3–5 zasad: argumenty zamiast ataków, każdy ma głos, „nie wiem” to dobra odpowiedź, klub nie jest sceną partyjną."],
+ ["Pierwsza dyskusja",45,"Lekki albo lokalny temat. Zacznij od rundy, potem swobodnie. Sekretarz notuje, w czym się zgadzacie, a w czym nie."],
+ ["Podsumowanie",10,"Sekretarz czyta na głos, co zapisał. Sala poprawia od razu."],
+ ["Sprawy organizacyjne",10,"Jak często, gdzie, jak wybieramy tematy, kto prowadzi następnym razem."],
+ ["Temat i termin następnego",5,"Wybierzcie temat i datę teraz, przy stole. To najlepsza ochrona przed ciszą na kanale."]]},
+ogolno:{n:"Temat ogólnopolski",src:"kolejność według „Jak zrobić spotkanie”, czasy orientacyjne",desc:"Trzy kroki według formatki. Raport powstaje w trakcie, sekretarz (w formatce: sprawozdawca) czyta po każdym kroku.",steps:[
+ ["Otwarcie",8,"Przeczytaj temat, kwestie i pytanie lokalne z briefu. Krótka runda imion. Sekretarz wpisuje liczbę obecnych."],
+ ["Krok 1: opinie ogólne",20,"Pierwsza reakcja na temat. Zapisujemy słowami mówiącego. Jeśli zabraknie czasu, skracamy właśnie ten krok."],
+ ["Krok 2a: skrajności",25,"Nazwijcie bieguny sporu tak, żeby ich zwolennicy mogli się pod tym podpisać. Gdy pada „boję się, że…”, sekretarz przenosi to do 2b."],
+ ["Krok 2b: emocje i obawy",25,"Czego się boimy, słowami uczestników. Nie oceniamy, czy obawa jest zasadna. Kroków 2a i 2b nie łączymy."],
+ ["Krok 3: rozwiązania",28,"Co zrobić, żeby było dobrze. Sekretarz zapisuje wszystko i numeruje. Nic nie odpada na tym etapie."],
+ ["Walidacja 0–10",12,"Sekretarz czyta pozycję, każdy podaje liczbę: jak ważne to jest dla mnie. Bez dyskusji w trakcie."],
+ ["Domknięcie",10,"Sekretarz czyta cały raport, sala zatwierdza. Wpiszcie prowadzącego i sprawozdawcę, ustalcie datę kolejnego spotkania."]]},
+zwykle:{n:"Zwykła dyskusja",src:"Praktyki Warszawy, Krakowa, Lublina i Wrocławia",desc:"Spotkanie na temat wybrany przez klub, z krótkim wprowadzeniem i przerwą.",steps:[
+ ["Runda otwierająca",15,"Każdy mówi krótko, skąd czerpie wiedzę o temacie albo jakie ma z nim doświadczenie. Różnice widać od razu."],
+ ["Wprowadzenie",10,"Prowadzący albo przygotowana osoba podaje kilka faktów lub danych. Bez wykładu."],
+ ["Dyskusja: diagnoza",35,"Na czym polega problem? Prowadzący nie dyskutuje, pilnuje głosu i zakresu tematu."],
+ ["Przerwa",10,"Kawa. W przerwie często padają najlepsze myśli, więc sekretarz trzyma notes pod ręką."],
+ ["Dyskusja: propozycje",35,"Każdy formułuje konkretną propozycję. Krótsze wypowiedzi podnoszą dynamikę."],
+ ["Zapis wniosków",15,"Sekretarz czyta: w czym się zgodziliśmy, w czym nie, rekomendacja, pytanie bez odpowiedzi."],
+ ["Następny temat",5,"Pytanie bez odpowiedzi to często najlepszy temat kolejnego spotkania."]]}
+};
+
+/* ---------- dane: gotowe wiadomości ---------- */
+const TYPES=[
+["ogloszenie","Ogłoszenie spotkania"],["przypomnienie","Przypomnienie"],["pierwsza","Pierwsza wiadomość"],["przypieta","Przypięta ściąga"],["notatka","Notatka po spotkaniu"],["fb","Post na Facebooka"],["zgloszenie","Zgłoszenie do centrali"],["uwagi","Uwagi do centrali"],["plik","Nazwa pliku raportu"]];
+const isoLocal=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const nextSat=()=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+((6-d.getDay()+7)%7||7)+7);return isoLocal(d)};
+const EXAMPLE={miasto:"Wrocław",nr:"4",data:nextSat(),od:"18:00",do:"20:30",miejsce:"PRZED·POKÓJ H13, ul. Świdnicka 43/45",sala:"sala na piętrze",temat:"Czy miasto powinno ograniczyć nocną sprzedaż alkoholu?",opis:"Pomysł wraca w kolejnych miastach. Kto zyska, kto straci i czy są rozwiązania mniej restrykcyjne.",format:"stol",potw:"reakcje",link:"",telefon:"",znak:"Stolik przy oknie, kartka „KRC” na stole.",kiedy:"jutro",imie:"Michał",osobie:"Zajmuję się edukacją obywatelską. Brakuje mi rozmów z ludźmi, którzy myślą inaczej niż ja.",rytm:"raz w miesiącu, w soboty o 18:00",liczba:"9",czas:"140",prowadzacy:"Michał",
+ przebieg:"Runda otwierająca, krótkie wprowadzenie z danymi z miasta, dyskusja w dwóch grupach, wspólne podsumowanie.",
+ zgoda:"Problem nocnego hałasu jest realny i dotyczy centrum.",niezgoda:"Czy zakaz to właściwe narzędzie, czy lepsze są kontrole i strefy.",rek:"Pilotaż w jednej dzielnicy z oceną po pół roku.",pyt:"Ile interwencji nocnych dotyczy alkoholu kupionego po 22?",
+ uwagi:"Dwie grupy po 4–5 osób sprawdziły się lepiej niż jedna rozmowa. Warto przynieść wydrukowane dane.",nast:"pierwszy poniedziałek listopada",
+ wnioski:"Zgodziliśmy się, że problem jest realny. Spieraliśmy się o narzędzie: zakaz czy kontrole.",discord:"https://discord.gg/KvRgJYcEEp",rodzaj:"gosc",
+ co:"Chcemy zaprosić na spotkanie byłą radną, która przez dwie kadencje zajmowała się bezpieczeństwem w mieście.",cel:"Żeby wniosła wiedzę o tym, jak działały dotychczasowe przepisy. Zabierze głos na końcu, jako uczestniczka.",
+ kogo:"Była radna (dwie kadencje, bezpieczeństwo w mieście). Przedstawimy ją jako byłą radną, która zajmowała się bezpieczeństwem, bez nazwiska i funkcji partyjnej. 3. spotkanie klubu.",stan:"planowane",
+ uco:"Formatka „Raport ze spotkania”, krok 2b",uproblem:"Przy kilku osobach mówiących naraz sekretarz nie nadąża zapisywać obaw słowami uczestników.",uprop:"Dopisać w instrukcji, że obawy zbieramy rundą, po jednej od osoby, a sekretarz czyta listę na głos przed przejściem do kroku 3."};
+const FIELDS={
+miasto:{l:"Miasto klubu"},nr:{l:"Numer spotkania",ph:"np. 3",w:1},data:{l:"Data",type:"date",w:1},od:{l:"Od",type:"time",w:1},do:{l:"Do",type:"time",w:1,hint:"Opcjonalnie."},
+miejsce:{l:"Miejsce i adres",full:1},sala:{l:"Jak trafić",ph:"np. sala 3, domofon 4",full:1},temat:{l:"Temat jako pytanie",full:1,hint:"Najlepiej pytanie, na które da się sensownie odpowiedzieć i tak, i nie."},
+opis:{l:"Dwa zdania o temacie",type:"textarea",full:1},format:{l:"Forma",type:"select",opts:[["stol","Rozmowa przy jednym stole"],["grupy","Małe grupy, potem wspólny krąg"],["ogolno","Temat ogólnopolski według formatki"]],full:1},
+potw:{l:"Potwierdzenie obecności",type:"select",opts:[["reakcje","Reakcje pod wiadomością"],["formularz","Formularz zapisu"],["wydarzenie","Wydarzenie na Discordzie"]],w:1},link:{l:"Link do zapisu lub wydarzenia",ph:"https://…",w:1},
+telefon:{l:"Telefon do organizatora",ph:"opcjonalnie",w:1,hint:"Ratuje ludzi, którzy się zgubią."},znak:{l:"Znak rozpoznawczy",w:1},
+kiedy:{l:"Kiedy wysyłasz",type:"select",opts:[["jutro","Dzień przed"],["dzis","W dniu spotkania"]],w:1},
+imie:{l:"Twoje imię",w:1},osobie:{l:"Kilka zdań o sobie",type:"textarea",full:1},rytm:{l:"Rytm spotkań",ph:"np. raz w miesiącu, w soboty",full:1},
+liczba:{l:"Liczba osób",type:"number",w:1},czas:{l:"Czas trwania (min)",type:"number",w:1},prowadzacy:{l:"Kto prowadził",w:1},
+przebieg:{l:"Przebieg",type:"textarea",full:1,hint:"Wzór centrali z 08.08: Przebieg, Wnioski, Uwagi."},
+zgoda:{l:"Wnioski: w czym się zgodziliśmy",type:"textarea",full:1},niezgoda:{l:"Wnioski: w czym się nie zgodziliśmy",type:"textarea",full:1},rek:{l:"Wnioski: rekomendacja",type:"textarea",full:1},pyt:{l:"Wnioski: pytanie, na które nie znamy odpowiedzi",full:1},
+uwagi:{l:"Uwagi dla innych klubów",type:"textarea",full:1},nast:{l:"Następne spotkanie",full:1},
+wnioski:{l:"Najważniejsze wnioski",type:"textarea",full:1},discord:{l:"Link do Discorda",full:1},
+rodzaj:{l:"Czego dotyczy",type:"select",opts:[["gosc","Zaproszenie gościa"],["fb","Profil w mediach społecznościowych"],["kom","Grupa na innym komunikatorze"],["inne","Inna sprawa"]],w:1},stan:{l:"Stan",type:"select",opts:[["planowane","Planujemy"],["dziala","Już działa"]],w:1},
+co:{l:"Co zamierzamy zrobić",type:"textarea",full:1},cel:{l:"W jakim celu",type:"textarea",full:1},kogo:{l:"Kogo dotyczy (gość: czym się zajmował i jak go przedstawimy)",type:"textarea",full:1},
+uco:{l:"Czego dotyczy uwaga",ph:"np. formatka, zasada, kanał",full:1},uproblem:{l:"Co nie działa",type:"textarea",full:1},uprop:{l:"Nasza propozycja",type:"textarea",full:1}
+};
+const TFIELDS={
+ogloszenie:["miasto","nr","data","od","do","miejsce","sala","temat","opis","format","potw","link","telefon","znak"],
+przypomnienie:["miasto","kiedy","data","od","miejsce","sala","temat","telefon","znak"],
+pierwsza:["miasto","imie","osobie","data","od","miejsce"],
+przypieta:["miasto","imie","rytm"],
+notatka:["miasto","data","prowadzacy","liczba","czas","temat","przebieg","zgoda","niezgoda","rek","pyt","uwagi","nast"],
+fb:["miasto","data","liczba","temat","wnioski","discord"],
+zgloszenie:["miasto","imie","rodzaj","stan","co","cel","kogo"],
+uwagi:["miasto","imie","uco","uproblem","uprop"],
+plik:["miasto","data","liczba","czas"]
+};
+const CHAN={ogloszenie:"ogloszenia",przypomnienie:"ogloszenia",pierwsza:"ogolny",przypieta:"ogolny",notatka:"ogolny",fb:"podglad-tekstu",zgloszenie:"pytania-i-zgloszenia",uwagi:"pytania-i-zgloszenia",plik:"tematy-ogólnopolskie"};
+const HINT={ogloszenie:"Po wklejeniu usuń tekst „@KRC …” i wpisz @ od nowa, wybierając rolę klubu z listy. Wklejony tekst nie wyśle powiadomienia.",przypomnienie:"Wyślij też krótkie przypomnienie rano w dniu spotkania.",pierwsza:"Publikuj na kanale ogólnym klubu. Odpowiedz każdemu, kto zareaguje.",przypieta:"Przypnij na kanale ogólnym klubu: prawy klik na wiadomości, Przypnij.",notatka:"Najpierw do akceptacji grupy. Po kilku dniach na #podsumowania-spotkań, jako komentarz pod wątkiem tematu.",fb:"Bez adresu spotkania. Po publikacji link i zrzut na #screeny-postów.",zgloszenie:"Wklej na #pytania-i-zgloszenia. Centrala stara się odpowiedzieć w 48 h.",uwagi:"Uwagi do formatki raportu wyślij Piotrowi Jezierskiemu. Uwagi do zasad wklej na #pytania-i-zgloszenia.",plik:"Plik PDF jako komentarz pod postem „Polska Szkoła”, a pod nim dopisek do skopiowania."};
+const slug=s=>String(s||"").trim().replace(/\s+/g,"-");
+const fmtDay=v=>{if(!v)return"[data]";const d=new Date(v+"T12:00:00");if(isNaN(d))return v;return new Intl.DateTimeFormat("pl-PL",{weekday:"long",day:"numeric",month:"long"}).format(d)};
+const fmtDot=v=>{if(!v)return"RRRR.MM.DD";return v.replace(/-/g,".")};
+const tryb={stol:"Rozmowa przy jednym stole, bez prelegenta.",grupy:"Małe grupy z prowadzącymi, potem wracamy do wspólnego kręgu.",ogolno:"To temat ogólnopolski. Rozmawiamy według wspólnej formatki, a nasze wnioski trafią do raportu razem z wnioskami innych klubów."};
+const cap=t=>t?t.charAt(0).toUpperCase()+t.slice(1):t;
+const M=f=>f.miasto||"[miasto]";
+const TPL={
+ogloszenie:f=>{const L=[];L.push(`**Klub ${M(f)} · ${f.nr?f.nr+". spotkanie":"spotkanie"}**`,"");
+ L.push(`📅 ${fmtDay(f.data)}, ${f.od||"[od]"}${f.do?"–"+f.do:""}`);L.push(`📍 ${f.miejsce||"[miejsce]"}${f.sala?" ("+f.sala+")":""}`);L.push(`💬 **${f.temat||"[temat]"}**`,"");
+ if(f.opis)L.push(f.opis,"");L.push((tryb[f.format]||tryb.stol)+" Nie musisz być ekspertem ani się przygotowywać. Możesz też przyjść tylko posłuchać.","");
+ if(f.potw==="reakcje")L.push("Daj znać reakcją: ❤️ będę · 👍 50:50 · 👀 tym razem nie");else L.push(`✅ ${f.potw==="wydarzenie"?"Kliknij „Zainteresowany” w wydarzeniu":"Zapisy"}: ${f.link||"[link]"}`);
+ if(f.znak)L.push(`🔎 ${f.znak}`);if(f.telefon)L.push(`📞 Gdyby ktoś się zgubił: ${f.telefon}`);L.push("",`@KRC ${M(f)}`);return L.join("\n")},
+przypomnienie:f=>{const L=[`⏰ **${f.kiedy==="dzis"?"Dziś":"Jutro"} spotkanie · Klub ${M(f)}**`,`${cap(fmtDay(f.data))}, ${f.od||"[godzina]"}`,`📍 ${f.miejsce||"[miejsce]"}${f.sala?" ("+f.sala+")":""}`,`💬 ${f.temat||"[temat]"}`];
+ if(f.znak)L.push(`🔎 ${f.znak}`);if(f.telefon)L.push(`📞 ${f.telefon}`);L.push("",`Do zobaczenia! @KRC ${M(f)}`);return L.join("\n")},
+pierwsza:f=>[`Cześć! Jestem ${f.imie||"[imię]"} i od dziś koordynuję Klub ${M(f)}. ${f.osobie||""}`.trim(),"",`Proponuję, żebyśmy spotkali się po raz pierwszy: **${fmtDay(f.data)}, ${f.od||"[godzina]"}, ${f.miejsce||"[miejsce]"}**. Na start bez wielkiego tematu: poznamy się, ustalimy, jak często i gdzie się spotykamy, i wybierzemy pierwszy temat.`,"","Jeśli chcesz przyjść, zostaw reakcję pod tą wiadomością (to niewiążące). Jeśli termin Ci nie pasuje, napisz, jaki pasuje. Jeśli znasz lepsze miejsce, też daj znać."].join("\n"),
+przypieta:f=>[`📌 **Jak działa Klub ${M(f)}**`,"",`**Spotkania:** ${f.rytm||"[rytm]"}. Ogłoszenia z datą, miejscem i tematem są przypięte tutaj albo na kanale ogłoszeń klubu.`,"**Udział jest bezpłatny i otwarty.** Nie musisz być ekspertem. Możesz przyjść tylko posłuchać.","**Powiadomienia:** kliknij nazwę serwera, wybierz Ustawienia powiadomień i włącz powiadomienia z kanałów klubu. Bez tego łatwo przegapić spotkanie.","**Wydarzenia:** w aplikacji na telefon są pod ikoną kalendarza obok wyszukiwarki. Kliknij „Zainteresowany”, a dostaniesz powiadomienie przed startem.","**Nie możesz pisać?** Wybierz swoje miasto w „Kanały i role” na górze serwera. Wpis na #skąd-jesteś nie wystarczy.","**Zasady rozmowy:** argumenty zamiast ataków, każdy ma głos, klub nie jest sceną partyjną.","",`Pytania? Pisz tutaj albo do mnie, ${f.imie||"[imię]"}.`].join("\n"),
+notatka:f=>[`**Notatka · Klub ${M(f)} · ${fmtDay(f.data)}**`,`Prowadzenie: ${f.prowadzacy||"[kto]"} · Osób: ${f.liczba||"[ile]"} · Czas: ${f.czas||"[ile]"} min`,`Temat: ${f.temat||"[temat]"}`,"",`**Przebieg:** ${f.przebieg||"…"}`,"","**Wnioski**",`W czym się zgodziliśmy: ${f.zgoda||"…"}`,`W czym się nie zgodziliśmy: ${f.niezgoda||"…"}`,`Rekomendacja klubu: ${f.rek||"…"}`,`Pytanie, na które nie znamy odpowiedzi: ${f.pyt||"…"}`,"",`**Uwagi dla innych klubów:** ${f.uwagi||"…"}`,"",`Następne spotkanie: ${f.nast||"[kiedy]"}`,"","Do końca tygodnia można zgłaszać poprawki. Potem notatka trafi na #podsumowania-spotkań."].join("\n"),
+fb:f=>[`Radykalne Centrum · Klub ${M(f)}`,"",`${cap(fmtDay(f.data))}: ${f.liczba||"[ile]"} ${plOs(f.liczba)} na spotkaniu klubu.`,`Temat: ${f.temat||"[temat]"}`,"",f.wnioski||"[najważniejsze wnioski]","","A Wy co o tym myślicie? Dajcie znać w komentarzach!","",`Chcesz porozmawiać na żywo lub dołączyć do naszych dyskusji? Wejdź na nasz serwer Discord: ${f.discord||"[link]"}`].join("\n"),
+zgloszenie:f=>{const r={gosc:"zaproszenie gościa",fb:"profil w mediach społecznościowych",kom:"grupa na innym komunikatorze",inne:"inna sprawa"}[f.rodzaj]||"sprawa";const dz=f.stan==="dziala";return[`**Zgłoszenie · Klub ${M(f)} · ${r}${dz?" (już działa)":""}**`,"",`**${dz?"Co robimy":"Co zamierzamy zrobić"}:** ${f.co||"…"}`,`**W jakim celu:** ${f.cel||"…"}`,`**Kogo dotyczy:** ${f.kogo||"…"}`,"",`Zgłasza: ${f.imie||"[imię]"} (koordynacja klubu). ${dz?"Zgłaszamy, bo to już działa.":"Czekamy na odpowiedź przed dalszymi krokami."}`].join("\n")},
+uwagi:f=>[`**Uwaga do centrali · Klub ${M(f)}**`,"",`**Czego dotyczy:** ${f.uco||"…"}`,`**Co nie działa:** ${f.uproblem||"…"}`,`**Nasza propozycja:** ${f.uprop||"…"}`,"",`Zgłasza: ${f.imie||"[imię]"} (koordynacja klubu). Chętnie przetestujemy zmianę na najbliższym spotkaniu.`].join("\n"),
+plik:f=>`${f.miasto||"Miasto"}, ${f.liczba||"[ile]"} ${plOs(f.liczba)}, ${f.czas||"[ile]"} min`
+};
+
+
+/* ---------- dane: układ przewodnika ---------- */
+const VIEWS=[
+ {id:"start",no:"",t:"Start",s:"wybierz, czego potrzebujesz"},
+ {id:"30-dni",no:"01",t:"Pierwsze 30 dni",s:"krok po kroku od zera"},
+ {id:"sytuacje",no:"02",t:"Co robić, gdy…",s:"sytuacje z odpowiedziami"},
+ {id:"wiadomosci",no:"03",t:"Gotowe wiadomości",s:"wpisz dane, skopiuj tekst"},
+ {id:"spotkanie",no:"04",t:"Spotkanie",s:"planer stołów i zegar"},
+ {id:"zasady",no:"05",t:"Zasady",s:"co obowiązuje, z datą"},
+ {id:"kontakty",no:"06",t:"Kontakty",s:"kto, w jakiej sprawie"},
+ {id:"zmiany",no:"07",t:"Zmiany",s:"co nowego od lipca"}];
+const VIDS=VIEWS.map(v=>v.id);
+const LEGACY={sciezka:"30-dni",warsztat:"wiadomosci",start:"start",sytuacje:"sytuacje",spotkanie:"spotkanie",zasady:"zasady",kontakty:"kontakty",zmiany:"zmiany"};
+const TILES=[
+ ["30-dni","Dopiero zaczynam","Pierwsze 30 dni krok po kroku: od pustego kanału do drugiego spotkania."],
+ ["sytuacje","Coś się dzieje w klubie","Nikt nie przyszedł, ludzie chcą WhatsApp, ktoś się kłóci. Co zrobić."],
+ ["wiadomosci","Muszę coś napisać","Ogłoszenie, przypomnienie, notatka, zgłoszenie. Wpisz dane i skopiuj."],
+ ["spotkanie","Dziś prowadzę spotkanie","Jak rozstawić stoły, kogo potrzebujesz i zegar, który prowadzi przez spotkanie."],
+ ["zasady","Czy to wolno?","Zasady centrali z datą i źródłem, oddzielone od ustaleń ustnych."],
+ ["kontakty","Do kogo napisać?","Opiekun Twojego województwa i gdzie zgłosić konkretną sprawę."]];
+const QUICK=["nikt","ankieta","whatsapp","pisac","gosc","partia","raport"];
+const TGROUPS=[["Przed spotkaniem",["pierwsza","ogloszenie","przypomnienie","przypieta"]],["Po spotkaniu",["notatka","fb","plik"]],["Do centrali",["zgloszenie","uwagi"]]];
+const TINFO={
+ pierwsza:"Pierwszego dnia koordynacji, na kanale ogólnym klubu. Od razu z propozycją terminu i miejsca.",
+ ogloszenie:"Gdy termin i miejsce są pewne. Na kanale ogłoszeń klubu albo na ogólnym, jeśli klub nie ma jeszcze kanału ogłoszeń.",
+ przypomnienie:"Dzień przed spotkaniem i jeszcze raz rano w dniu spotkania.",
+ przypieta:"Raz, na początku. Przypnij na kanale ogólnym klubu, żeby nowe osoby wiedziały, jak dołączyć.",
+ notatka:"Zaraz po spotkaniu. Najpierw do akceptacji grupy, po kilku dniach na #podsumowania-spotkań.",
+ fb:"Po spotkaniu, jeśli klub ma zgłoszony profil na Facebooku.",
+ plik:"Po spotkaniu na temat ogólnopolski: nazwa pliku PDF z raportem i dopisek pod nim.",
+ zgloszenie:"Zanim zaprosisz gościa albo założysz profil. Także wtedy, gdy grupa poza Discordem już działa.",
+ uwagi:"Gdy coś w zasadach albo w formatce raportu nie działa w Twoim klubie."};
+const ICON_CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const ICON_HOME='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>';
+
+/* ---------- stan ---------- */
+const validIso=v=>typeof v==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!isNaN(new Date(v+"T12:00:00"));
+let club=store.get("club",{miasto:"",woj:"",imie:""});if(!club||typeof club!=="object")club={miasto:"",woj:"",imie:""};
+let gen=Object.assign({},EXAMPLE,store.get("gen",{})||{});
+let genType=store.get("genType","ogloszenie");if(!TFIELDS[genType])genType="ogloszenie";
+let done=store.get("done",{});if(!done||typeof done!=="object")done={};
+let startDate=store.get("start","");if(!validIso(startDate))startDate="";
+if(!validIso(gen.data))gen.data=EXAMPLE.data;
+const doneCount=()=>PATH.filter(p=>done[p.id]).length;
+
+/* ---------- wyszukiwanie ---------- */
+const INDEX=[
+ ...SITS.map(s=>({type:"Sytuacja",title:s.t,sub:CATS[s.cat],kw:s.kw,text:[...(s.now||[]),s.answer||"",s.dont||""].join(" "),to:"sit:"+s.id})),
+ ...RULES.map(r=>({type:STATUS[r[4]][1]==="Obowiązuje"?"Zasada":STATUS[r[4]][1],title:r[1].replace(/`/g,""),sub:AREAS[r[0]]+(r[2]?" · "+r[2]:""),text:r[1]+" "+AREAS[r[0]],to:"rule:"+r[0]})),
+ ...TYPES.map(t=>({type:"Wzór",title:t[1],sub:"Gotowe wiadomości",kw:"wzór szablon tekst skopiuj gotowa wiadomość "+t[0],text:TINFO[t[0]]||"",to:"tpl:"+t[0]})),
+ ...Object.entries(SCEN).map(([k,s])=>({type:"Narzędzie",title:"Tryb prowadzącego: "+s.n,sub:s.desc,text:s.n+" zegar timer prowadzenie agenda harmonogram spotkania "+s.desc,to:"meet:"+k})),
+ {type:"Narzędzie",title:"Planer stołów",sub:"Format spotkania do liczby osób",text:"planer stoły format liczba osób ile grup sala podział",to:"#spotkanie"},
+ {type:"Narzędzie",title:"Twój opiekun i mapa kontaktów",sub:"Kto, w jakiej sprawie",text:"opiekun województwo kontakt gdzie zgłosić kto odpowiada mail",to:"#kontakty"},
+ {type:"Narzędzie",title:"Pierwsze 30 dni",sub:"Ścieżka startowa",kw:"start nowy nowa koordynator koordynatorka pierwsze kroki ścieżka zacząć zaczynam początek",text:"",to:"#sciezka",boost:1.2},
+ ...MATTERS.map(m=>({type:"Kontakt",title:m[0],sub:m[1].replace(/`/g,""),text:m.join(" "),to:"#kontakty"})),
+ ...PATH.map(x=>({type:"Krok",title:"Dzień "+x.d+": "+x.t,sub:"Pierwsze 30 dni",text:[x.t,x.why,...x.steps].join(" "),to:"task:"+x.id})),
+ ...MYTHS.map(m=>({type:"Mit",title:m[0],sub:m[1],text:m.join(" "),to:"rule:mity"}))
+];
+const words=s=>norm(s).split(/[^a-z0-9]+/).filter(Boolean);
+INDEX.forEach(it=>{it._t=words(it.title);it._k=words(it.kw||"");it._x=words(it.text)});
+const STOP=new Set("a aby albo ale bo by co czy do dla gdy gdzie i ich jak jaka jaki jest jestem juz ktos ma mam mamy mi mnie mozna na nas nie nic o od po pod przy sie sa ta tak to tu w we z za ze chce".split(" "));
+function search(q,pool=INDEX,limit=8){
+ const toks=norm(q).split(/[^a-z0-9]+/).filter(t=>t.length>1&&!STOP.has(t));if(!toks.length)return[];
+ return pool.map(it=>{let s=0,hit=0;
+  for(const t of toks){const st=t.length<=4?t.slice(0,Math.max(3,t.length-1)):t.slice(0,Math.max(4,t.length-2));
+   if(it._t.some(w=>w.startsWith(st))){s+=4;hit++}else if(it._k.some(w=>w.startsWith(st))){s+=3;hit++}else if(it._x.some(w=>w.startsWith(st))){s+=2;hit++}else s-=1;
+   if(it._t.includes(t)||it._k.includes(t))s+=1}
+  if(!hit)return{it,s:0};if(it.type==="Sytuacja")s+=.3;s+=it.boost||0;return{it,s}}).filter(x=>x.s>1).sort((a,b)=>b.s-a.s).slice(0,limit).map(x=>x.it);
+}
+function renderResults(ul,list,hl=-1,q=""){
+ const asked=q.trim().length>1;
+ if(ul.id==="qRes")$("#qCount").textContent=asked?(list.length?list.length+" "+pl(list.length,["wynik","wyniki","wyników"]):"Brak wyników"):"";
+ if(!list.length){ul.innerHTML=asked?`<li class="none">Nic nie pasuje. Spróbuj innego słowa albo przejrzyj <a href="#/sytuacje">wszystkie sytuacje</a>.</li>`:"";return}
+ ul.innerHTML=list.map((r,i)=>`<li><button type="button" data-to="${esc(r.to)}" class="${i===hl?"hl":""}"><span class="rt">${esc(r.type)}</span><span class="rx">${esc(r.title)}<small>${esc(r.sub||"")}</small></span><span class="ra" aria-hidden="true">→</span></button></li>`).join("");
+ if(hl>=0)ul.querySelector(".hl")?.scrollIntoView({block:"nearest"});
+}
+
+/* ---------- dialogi: fokus i blokada tła ---------- */
+const pal=$("#pal"),clubDlg=$("#clubDlg"),stage=$("#stage"),menuDlg=$("#menuDlg");
+const BG=["header.bar",".shell",".tabbar"];
+let dlgReturn=null;
+const anyDlg=()=>!pal.hidden||!clubDlg.hidden||!stage.hidden||!menuDlg.hidden;
+function dlgOpen(el,focusSel){if(!el.hidden)return;if(!anyDlg())dlgReturn=document.activeElement;el.hidden=false;BG.forEach(s=>$(s)?.setAttribute("inert",""));setTimeout(()=>$(focusSel)?.focus(),20)}
+function dlgClose(el,restore=true){if(el.hidden)return;el.hidden=true;if(!anyDlg()){BG.forEach(s=>$(s)?.removeAttribute("inert"));const r=dlgReturn;dlgReturn=null;if(restore&&r&&document.contains(r)){try{r.focus({preventScroll:true})}catch(e){}}}}
+function openMenu(){paintNav();dlgOpen(menuDlg,"#menuClose")}
+function closeMenu(restore=true){dlgClose(menuDlg,restore)}
+$("#menuBtn").addEventListener("click",openMenu);$("#menuClose").addEventListener("click",()=>closeMenu());
+menuDlg.addEventListener("click",e=>{if(e.target===menuDlg)closeMenu()});
+
+/* ---------- nawigacja między widokami ---------- */
+let curView=null,curKey=null,booted=false;
+function pathFromHash(){const h=location.hash||"";if(h.startsWith("#/"))return h.slice(1);if(h.length>1){const id=h.slice(1);return "/"+(LEGACY[id]||id)}return "/"}
+function routeFor(to){
+ if(to.startsWith("sit:"))return "/sytuacje/"+to.slice(4);
+ if(to.startsWith("tpl:"))return "/wiadomosci/"+to.slice(4);
+ if(to.startsWith("meet:"))return "/spotkanie/"+to.slice(5);
+ if(to.startsWith("task:"))return "/30-dni/"+to.slice(5);
+ if(to.startsWith("rule:"))return "/zasady/"+to.slice(5);
+ if(to.startsWith("#/"))return to.slice(1);
+ if(to.startsWith("#")){const id=to.slice(1);return "/"+(LEGACY[id]||id)}
+ return "/";
+}
+function setHash(path,replace){try{const h="#"+path;if(location.hash!==h){if(replace)history.replaceState(null,"",h);else history.pushState(null,"",h)}}catch(e){}}
+function navigate(path){setHash(path);render(path)}
+function go(to){closePal(false);closeMenu(false);navigate(routeFor(to))}
+function render(path,force){
+ const parts=path.replace(/^\//,"").split("/");let view=parts[0]||"start";const sub=parts[1]?decodeURIComponent(parts[1]):"";
+ if(!VIDS.includes(view))view="start";
+ const key=view+"/"+sub;if(key===curKey&&!force)return;
+ const changed=view!==curView;curKey=key;curView=view;
+ $$(".view").forEach(v=>v.hidden=v.dataset.view!==view);
+ paintNav();
+ $("#copyFab").classList.toggle("show",view==="wiadomosci");
+ const V=VIEWS.find(v=>v.id===view);document.title=(view==="start"?"":V.t+" · ")+"Przewodnik Koordynatora";
+ if(sub&&openSub(view,sub))return;
+ window.scrollTo(0,0);
+ if(changed&&booted)$("#v-"+view+" h1")?.focus({preventScroll:true});
+}
+function openSub(view,sub){
+ if(view==="sytuacje"){if(!SITS.some(s=>s.id===sub))return false;sitFilter="all";sitQuery="";$("#sitQ").value="";renderSits();const el=$("#sit-"+sub);el.open=true;
+  requestAnimationFrame(()=>{el.scrollIntoView({block:"start"});el.querySelector("summary")?.[booted?"focus":"blur"]({preventScroll:true})});return true}
+ if(view==="wiadomosci"){if(!TFIELDS[sub])return false;genType=sub;renderGen();window.scrollTo(0,0);$(`#picker [data-type="${sub}"]`)?.[booted?"focus":"blur"]({preventScroll:true});return true}
+ if(view==="30-dni"){const el=$("#"+CSS.escape(sub));if(!el||!el.classList.contains("trow"))return false;const d=el.querySelector("details");if(d)d.open=true;
+  requestAnimationFrame(()=>{el.scrollIntoView({block:"center"});el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash");el.querySelector("[data-task]")?.[booted?"focus":"blur"]({preventScroll:true})});return true}
+ if(view==="spotkanie"){const a=$("#scen-"+CSS.escape(sub));if(!a)return false;requestAnimationFrame(()=>{a.scrollIntoView({block:"center"});a.querySelector("[data-meet]")?.[booted?"focus":"blur"]({preventScroll:true});a.animate?.([{boxShadow:"inset 0 0 0 0 transparent"},{boxShadow:"inset 0 0 0 3px #EC3013"},{boxShadow:"inset 0 0 0 0 transparent"}],{duration:1400,delay:200})});return true}
+ if(view==="zasady"){if(sub==="mity"){requestAnimationFrame(()=>$("#mity").scrollIntoView({block:"start"}));return true}
+  if(!AREAS[sub])return false;ruleFilter="all";renderRules();const d=$("#rg-"+sub);d.open=true;requestAnimationFrame(()=>{d.scrollIntoView({block:"start"});d.querySelector("summary")?.[booted?"focus":"blur"]({preventScroll:true})});return true}
+ return false;
+}
+window.addEventListener("popstate",()=>render(pathFromHash()));
+window.addEventListener("hashchange",()=>render(pathFromHash()));
+document.addEventListener("click",e=>{
+ const a=e.target.closest('a[href^="#/"]');
+ if(a){e.preventDefault();closePal(false);closeMenu(false);navigate(a.getAttribute("href").slice(1)||"/");return}
+ const b=e.target.closest("[data-to]");if(b){e.preventDefault();go(b.dataset.to);return}
+ const c=e.target.closest("[data-club]");if(c){closeMenu(false);openClub();return}
+ const k=e.target.closest("[data-copy]");if(k)copyText(k.dataset.copy);
+});
+
+/* ---------- menu ---------- */
+function navMeta(id){if(id==="30-dni")return doneCount()+"/"+PATH.length;if(id==="sytuacje")return String(SITS.length);if(id==="wiadomosci")return String(TYPES.length);return""}
+function paintNav(){
+ const html=VIEWS.map(v=>{const on=v.id===curView;return`<li><a href="#/${v.id==="start"?"":v.id}" class="${on?"on":""}"${on?' aria-current="page"':""}><span class="no">${v.no||ICON_HOME}</span><span><b>${esc(v.t)}</b><small>${esc(v.s)}</small></span><span class="meta">${navMeta(v.id)}</span></a></li>`+(v.id==="start"?'<li class="sep" role="presentation"></li>':"")}).join("");
+ $$("[data-nav]").forEach(ul=>ul.innerHTML=html);
+ const g=guardOf(club.woj);
+ const ch=club.miasto?`<span class="muted">Twój klub</span><b>Klub ${esc(club.miasto)}</b>${g?`<span>Opiekun: ${esc(g)}</span>`:""}<span><button class="link" type="button" data-club>Zmień dane klubu</button></span>`:`<span class="muted">Twój klub</span><span>Ustaw miasto i województwo, a wiadomości uzupełnią się same.</span><span><button class="link" type="button" data-club>Ustaw klub</button></span>`;
+ $$("[data-navclub]").forEach(d=>d.innerHTML=ch);
+ $$(".tabbar [data-tab]").forEach(a=>{const on=a.dataset.tab===curView;a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+ $("#menuBtn").classList.toggle("on",["30-dni","zasady","kontakty","zmiany"].includes(curView));
+}
+$$("[data-pager]").forEach(n=>{const i=VIDS.indexOf(n.dataset.pager);const p=VIEWS[i-1],x=VIEWS[i+1];
+ n.innerHTML=(p?`<a href="#/${p.id==="start"?"":p.id}"><small>← Wstecz</small><b>${esc(p.t)}</b></a>`:"")+(x?`<a class="nx" href="#/${x.id}"><small>Dalej →</small><b>${esc(x.t)}</b></a>`:`<a class="nx" href="#/"><small>Wróć</small><b>Start</b></a>`)});
+
+/* ---------- start ---------- */
+function paintStart(){
+ const g=guardOf(club.woj);
+ const meta={"30-dni":doneCount()?`${doneCount()} z ${PATH.length} kroków zrobione`:`${PATH.length} kroków`,sytuacje:`${SITS.length} ${pl(SITS.length,["sytuacja","sytuacje","sytuacji"])}`,wiadomosci:`${TYPES.length} ${pl(TYPES.length,["wzór","wzory","wzorów"])}`,spotkanie:"planer i 3 scenariusze",zasady:(n=>`${n} ${pl(n,["spisana zasada","spisane zasady","spisanych zasad"])}`)(RULES.filter(r=>r[4]==="ok").length),kontakty:g?`opiekun: ${g}`:"4 opiekunów województw"};
+ $("#tiles").innerHTML=TILES.map(([id,t,d])=>{const V=VIEWS.find(v=>v.id===id);return`<a class="tile" href="#/${id}"><span class="no">${V.no}</span><b>${esc(t)}</b><p>${esc(d)}</p><span class="meta"><span>${esc(meta[id])}</span><i aria-hidden="true">→</i></span></a>`}).join("");
+ $("#startClub").innerHTML=club.miasto?`<p><b>Klub ${esc(club.miasto)}</b>${g?` · opiekun: ${esc(g)}`:""}. Gotowe wiadomości uzupełniają się Twoimi danymi.</p><button class="btn sm" type="button" data-club>Zmień</button>`:`<p><b>Ustaw swój klub.</b> Gotowe wiadomości uzupełnią się same, a w kontaktach od razu zobaczysz swojego opiekuna.</p><button class="btn sm" type="button" data-club>Ustaw klub</button>`;
+}
+$("#quick").innerHTML=QUICK.map(id=>SITS.find(s=>s.id===id)).filter(Boolean).map(s=>`<li><a href="#/sytuacje/${s.id}"><span>${esc(s.t)}</span><span aria-hidden="true">→</span></a></li>`).join("");
+$("#month").innerHTML=MONTH.map(m=>`<li><time>${m[0]}</time><span>${esc(m[1])}${m[2]?` <a href="#${esc(routeFor(m[2]))}">${esc(m[3]||"Więcej →")}</a>`:""}</span></li>`).join("");
+const q=$("#q"),qRes=$("#qRes");
+q.addEventListener("input",()=>renderResults(qRes,search(q.value),-1,q.value));
+q.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();const r=search(q.value);if(r[0])go(r[0].to)}});
+const PH=["np. nikt nie przyszedł","np. ktoś chce zaprosić posła","np. ludzie chcą WhatsApp","np. jest nas troje","np. gdzie oddać raport","np. czy to partia","np. ktoś nie może pisać"];let phI=0;
+setInterval(()=>{if(document.activeElement!==q&&!q.value){phI=(phI+1)%PH.length;q.placeholder=PH[phI]}},3200);
+
+/* ---------- paleta wyszukiwania ---------- */
+const palQ=$("#palQ"),palRes=$("#palRes");let palHl=0,palList=[];
+const palDefault=()=>QUICK.map(id=>INDEX.find(i=>i.to==="sit:"+id)).filter(Boolean);
+function palFill(){const v=palQ.value;palList=v.trim().length>1?search(v):palDefault();palHl=0;renderResults(palRes,palList,palList.length?palHl:-1,v)}
+function openPal(){if(!clubDlg.hidden||!stage.hidden)return;closeMenu(false);palQ.value="";palFill();dlgOpen(pal,"#palQ")}
+function closePal(restore=true){dlgClose(pal,restore)}
+$("#palBtn").addEventListener("click",openPal);$("#palClose").addEventListener("click",()=>closePal());
+pal.addEventListener("click",e=>{if(e.target===pal)closePal()});
+palQ.addEventListener("input",palFill);
+palQ.addEventListener("keydown",e=>{
+ if(e.key==="ArrowDown"){e.preventDefault();palHl=Math.min(palHl+1,palList.length-1);renderResults(palRes,palList,palHl,palQ.value)}
+ else if(e.key==="ArrowUp"){e.preventDefault();palHl=Math.max(palHl-1,0);renderResults(palRes,palList,palHl,palQ.value)}
+ else if(e.key==="Enter"){e.preventDefault();if(palList[palHl])go(palList[palHl].to)}
+ else if(e.key==="Escape"){e.preventDefault();closePal()}});
+document.addEventListener("keydown",e=>{
+ if(!stage.hidden)return;
+ if(e.key==="Escape"){if(!pal.hidden)closePal();else if(!clubDlg.hidden)closeClub();else if(!menuDlg.hidden)closeMenu();return}
+ if(!clubDlg.hidden||!menuDlg.hidden)return;
+ const typing=/input|textarea|select/i.test(document.activeElement?.tagName||"");
+ if((e.key==="/"&&!typing&&pal.hidden)||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k")){e.preventDefault();if(pal.hidden)openPal();else palQ.focus()}});
+
+/* ---------- twój klub ---------- */
+const wojOpts=(sel)=>`<option value="">wybierz…</option>`+WOJ.map(w=>`<option value="${esc(w[0])}"${w[0]===sel?" selected":""}>${esc(w[0])}</option>`).join("");
+function openClub(){$("#cMiasto").value=club.miasto||"";$("#cWoj").innerHTML=wojOpts(club.woj);$("#cImie").value=club.imie||"";dlgOpen(clubDlg,"#cMiasto")}
+function closeClub(){dlgClose(clubDlg)}
+function paintClub(){$("#clubLbl").textContent=club.miasto?"Klub "+club.miasto:"Twój klub";$("#clubBtn").setAttribute("aria-label",club.miasto?"Twój klub: "+club.miasto:"Twój klub");$("#woj").innerHTML=wojOpts(club.woj);paintGuard();paintNav();paintStart()}
+$("#clubBtn").addEventListener("click",openClub);$("#clubCancel").addEventListener("click",closeClub);
+clubDlg.addEventListener("click",e=>{if(e.target===clubDlg)closeClub()});
+$("#clubForm").addEventListener("submit",e=>{e.preventDefault();club={miasto:$("#cMiasto").value.trim(),woj:$("#cWoj").value,imie:$("#cImie").value.trim()};store.set("club",club);
+ if(club.miasto)gen.miasto=club.miasto;if(club.imie){gen.imie=club.imie;gen.prowadzacy=club.imie}store.set("gen",gen);paintClub();renderGen();closeClub();toast("Zapisano Twój klub")});
+
+/* ---------- 30 dni ---------- */
+const addDays=(iso,n)=>{const d=new Date(iso+"T12:00:00");d.setDate(d.getDate()+n-1);return d};
+const fmtTask=d=>new Intl.DateTimeFormat("pl-PL",{weekday:"short",day:"numeric",month:"long"}).format(d);
+const WEEKS=[[1,7,"Tydzień 1"],[8,14,"Tydzień 2"],[15,21,"Tydzień 3"],[22,30,"Tydzień 4"]];
+const toolsHTML=p=>p.tools.map(t=>`<button class="btn sm" type="button" data-to="${esc(t[1])}">${esc(t[0])} →</button>`).join("");
+function renderPath(){
+ const sorted=[...PATH].sort((a,b)=>a.d-b.d);
+ const today=new Date();today.setHours(12,0,0,0);
+ const openIds=$$("#tasks details[open]").map(d=>d.closest(".trow").id);
+ const nx=sorted.find(p=>!done[p.id]);
+ if(nx){const dd=startDate?addDays(startDate,nx.d):null;
+  $("#nextStep").innerHTML=`<div class="next"><span class="lbl">Następny krok · Dzień ${nx.d}${dd?" · "+esc(fmtTask(dd)):""}</span><h2>${esc(nx.t)}</h2><p>${inline(nx.why)}</p><ul>${nx.steps.map(s=>`<li>${inline(s)}</li>`).join("")}</ul><div class="acts"><button class="btn primary" type="button" data-done="${nx.id}">${ICON_CHECK.replace('stroke-width="3"','stroke-width="3" style="opacity:1;transform:none;color:currentColor"')}Zrobione</button>${toolsHTML(nx)}</div></div>`}
+ else $("#nextStep").innerHTML=`<div class="next"><span class="lbl">Ścieżka zakończona</span><h2>Wszystkie kroki za Tobą. Gratulacje!</h2><p>Klub ma rytm. Gdy coś się zatnie, zajrzyj do sytuacji. Przed kolejnym spotkaniem przydadzą się gotowe wiadomości.</p><div class="acts"><a class="btn primary" href="#/sytuacje">Co robić, gdy…</a><a class="btn" href="#/wiadomosci">Gotowe wiadomości</a></div></div>`;
+ $("#tasks").innerHTML=WEEKS.map(([a,b,l])=>{const ps=sorted.filter(p=>p.d>=a&&p.d<=b);if(!ps.length)return"";
+  return`<h2 class="grp">${l} <span class="n">dni ${a}–${b}</span></h2><div class="tlist">${ps.map(p=>{const dd=startDate?addDays(startDate,p.d):null;const isToday=!!dd&&dd.toDateString()===today.toDateString();const isDone=!!done[p.id];
+   return`<div class="trow${isDone?" is-done":""}${isToday?" today":""}" id="${p.id}"><button class="check" type="button" role="checkbox" aria-checked="${isDone}" data-task="${p.id}" aria-label="Zrobione: ${esc(p.t)}">${ICON_CHECK}</button><details${openIds.includes(p.id)?" open":""}><summary><span><span class="day">Dzień ${p.d}${dd?" · "+esc(fmtTask(dd)):""}${isToday?' · <span class="td">dziś</span>':""}</span><h3>${esc(p.t)}</h3></span>${ICON_CHEV}</summary><div class="body"><p>${inline(p.why)}</p><ul>${p.steps.map(s=>`<li>${inline(s)}</li>`).join("")}</ul><div class="tools">${toolsHTML(p)}</div></div></details></div>`}).join("")}</div>`}).join("");
+ const n=doneCount();$("#progFill").style.width=(n/PATH.length*100)+"%";$("#progNum").textContent=`${n}/${PATH.length}`;
+ $("#startNote").textContent=startDate?"Przy krokach widać daty z kalendarza.":"Podaj datę, a przy krokach pojawią się daty z kalendarza.";
+}
+function setDone(id,val){done[id]=val;store.set("done",done);renderPath();paintNav();paintStart();
+ if(val)toast(doneCount()===PATH.length?"Cała ścieżka za Tobą. Gratulacje!":"Krok odhaczony")}
+$("#tasks").addEventListener("click",e=>{const b=e.target.closest("[data-task]");if(!b)return;const id=b.dataset.task;setDone(id,!done[id]);$('[data-task="'+id+'"]')?.focus({preventScroll:true})});
+$("#nextStep").addEventListener("click",e=>{const b=e.target.closest("[data-done]");if(!b)return;setDone(b.dataset.done,true);$("#nextStep [data-done]")?.focus({preventScroll:true})});
+$("#startDate").value=startDate;$("#startDate").addEventListener("change",e=>{const v=e.target.value;startDate=validIso(v)?v:"";if(startDate)store.set("start",startDate);else store.del("start");renderPath()});
+
+/* ---------- sytuacje ---------- */
+let sitFilter="all",sitQuery="";
+const SIT_POOL=INDEX.filter(i=>i.type==="Sytuacja");
+const kindTag=s=>s.kind==="rule"?`<span class="tag rule">Zasada centrali</span>`:s.kind==="open"?`<span class="tag open">Nieustalone</span>`:`<span class="tag">Praktyka klubów</span>`;
+const kindTagShort=s=>s.kind==="practice"?"":kindTag(s);
+function sitHTML(s,showCat){
+ const pv=(s.answer||s.now[0]||"").replace(/`/g,"");
+ return`<details class="sit" id="sit-${s.id}"><summary><div>${showCat||s.kind!=="practice"?`<span class="k">${showCat?`<span>${esc(CATS[s.cat])}</span>`:""}${kindTagShort(s)}</span>`:""}<h3>${esc(s.t)}</h3><p class="pv">${esc(pv)}</p></div>${ICON_CHEV}</summary>
+ <div class="sit-body"><div>
+ ${s.answer?`<div class="answer"><h4>Odpowiedź do skopiowania</h4><p>${esc(s.answer)}</p><button class="btn sm" type="button" data-copy="${esc(s.answer)}">Kopiuj odpowiedź</button></div>`:""}
+ <h4>${esc(s.h||"Co zrobić")}</h4><ol class="steps">${s.now.map(x=>`<li><span>${inline(x)}</span></li>`).join("")}</ol>
+ ${s.dont?`<div class="dont"><b>Czego nie robić.</b> ${inline(s.dont)}</div>`:""}
+ </div><div class="sit-aside">
+ <div class="row">${kindTag(s)}</div>
+ ${s.rule?`<div class="row"><span class="muted">Źródło zasady:</span> ${esc(s.rule)}</div>`:""}
+ ${s.open?`<div class="row">${s.kind==="open"?"":`<span class="tag open">Nieustalone</span><br>`}${esc(s.open)}</div>`:""}
+ ${s.who?`<div class="row"><span class="muted">Do kogo:</span> ${inline(s.who)}</div>`:""}
+ ${s.proof?`<div class="proof">${inline(s.proof)}</div>`:""}
+ ${s.go?`<div><button class="btn primary sm" type="button" data-to="${esc(s.go.to)}">${esc(s.go.label)} →</button></div>`:""}
+ </div></div></details>`;
+}
+function renderSits(){
+ $("#sitFilters").innerHTML=[["all","Wszystkie"],...Object.entries(CATS)].map(([k,v])=>`<button class="chip" type="button" data-cat="${k}" aria-pressed="${sitFilter===k}">${esc(v)}<span class="n">${k==="all"?SITS.length:SITS.filter(s=>s.cat===k).length}</span></button>`).join("");
+ const openIds=$$("#sits details[open]").map(d=>d.id);
+ let html,count="";
+ if(sitQuery.trim().length>1){
+  const list=search(sitQuery,SIT_POOL,40).map(i=>SITS.find(s=>"sit:"+s.id===i.to)).filter(s=>s&&(sitFilter==="all"||s.cat===sitFilter));
+  count=list.length?`Pasuje: ${list.length} ${pl(list.length,["karta","karty","kart"])}`:"Nic nie pasuje.";
+  html=list.length?`<div class="sits">${list.map(s=>sitHTML(s,true)).join("")}</div>`:`<div class="empty">Nic nie pasuje. Spróbuj innego słowa albo <button class="link" type="button" data-clearsit>pokaż wszystkie sytuacje</button>.</div>`;
+ }else{
+  const cats=sitFilter==="all"?Object.keys(CATS):[sitFilter];
+  html=cats.map(c=>{const l=SITS.filter(s=>s.cat===c);return`<h2 class="grp">${esc(CATS[c])} <span class="n">${l.length}</span></h2><div class="sits">${l.map(s=>sitHTML(s,false)).join("")}</div>`}).join("");
+ }
+ $("#sits").innerHTML=html;openIds.forEach(id=>{const d=$("#"+id);if(d)d.open=true});
+ $("#sitCount").textContent=count;
+}
+$("#sitFilters").addEventListener("click",e=>{const b=e.target.closest("[data-cat]");if(!b)return;sitFilter=b.dataset.cat;renderSits();$(`#sitFilters [data-cat="${sitFilter}"]`)?.focus()});
+$("#sitQ").addEventListener("input",e=>{sitQuery=e.target.value;renderSits()});
+$("#sits").addEventListener("click",e=>{if(e.target.closest("[data-clearsit]")){sitQuery="";sitFilter="all";$("#sitQ").value="";renderSits();$("#sitQ").focus()}});
+$("#sits").addEventListener("toggle",e=>{const d=e.target;if(d.tagName!=="DETAILS"||!d.open||curView!=="sytuacje")return;setHash("/sytuacje/"+d.id.slice(4),true);curKey="sytuacje/"+d.id.slice(4)},true);
+
+/* ---------- gotowe wiadomości ---------- */
+function fieldHTML(k){const F=FIELDS[k],v=gen[k]??"",id="g_"+k,cls=F.full?"f full":"f";
+ let input;if(F.type==="textarea")input=`<textarea id="${id}" data-k="${k}" rows="3">${esc(v)}</textarea>`;
+ else if(F.type==="select")input=`<select id="${id}" data-k="${k}">${F.opts.map(o=>`<option value="${o[0]}"${o[0]===v?" selected":""}>${esc(o[1])}</option>`).join("")}</select>`;
+ else input=`<input id="${id}" data-k="${k}" type="${F.type||"text"}" value="${esc(v)}"${F.ph?` placeholder="${esc(F.ph)}"`:""}${F.type==="number"?' min="0" inputmode="numeric"':""}>`;
+ return`<div class="${cls}"><label for="${id}">${esc(F.l)}</label>${input}${F.hint?`<span class="hint">${esc(F.hint)}</span>`:""}</div>`}
+const typeName=id=>(TYPES.find(t=>t[0]===id)||[,""])[1];
+function renderGen(){
+ if(!TFIELDS[genType])genType="ogloszenie";store.set("genType",genType);
+ $("#picker").innerHTML=TGROUPS.map(([g,ids])=>`<div class="pgroup"><span class="gl">${esc(g)}</span><div class="chips">${ids.map(id=>`<button class="chip" type="button" data-type="${id}" aria-pressed="${id===genType}">${esc(typeName(id))}</button>`).join("")}</div></div>`).join("");
+ $("#tinfo").innerHTML=`<b>Kiedy wysłać</b><span>${inline(TINFO[genType]||"")}</span>`;
+ const isEx=!store.get("gen",null);
+ $("#genForm").innerHTML=`<span class="form-h">${esc(typeName(genType))}: Twoje dane</span>`+TFIELDS[genType].map(fieldHTML).join("")+`<div class="form-note"><span>${isEx?"Wypełnione przykładowymi danymi. Wpisz swoje.":"Twoje dane zapisują się w tej przeglądarce."}</span><button class="btn sm" type="button" id="genReset">Przywróć przykład</button></div><p class="toview full"><a class="link" href="#podglad-wiadomosci" data-jump="pv">Zobacz podgląd i skopiuj →</a></p>`;
+ paintPreview();
+}
+function genText(){return TPL[genType](gen)}
+function paintPreview(){
+ const t=genText();const isFile=genType==="plik";
+ $("#fileOut").hidden=!isFile;
+ if(isFile){const name=`${fmtDot(gen.data)}_${slug(gen.miasto||"Miasto")}_Polska_Szkoła.pdf`;$("#fileOut").innerHTML=`<span class="lab caps">Nazwa pliku PDF</span><span class="row"><span>${esc(name)}</span><button class="btn sm" type="button" data-copy="${esc(name)}">Kopiuj nazwę</button></span>`}
+ $("#dcChan").textContent=(gen.miasto&&!["fb","zgloszenie","uwagi","plik"].includes(genType)?norm(gen.miasto).replace(/[^a-z0-9]+/g,"")+"-":"")+CHAN[genType];
+ const name=gen.imie||"Koordynator";$("#dcName").textContent=name;$("#dcAv").textContent=name.trim().charAt(0).toUpperCase()||"K";
+ const now=new Date();$("#dcTime").textContent="Dziś o "+now.toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"});
+ $("#dcBody").innerHTML=esc(t).replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/(https?:\/\/[^\s<]+)/g,'<span class="ln">$1</span>').replace(/(^|\s)(@KRC [^\n<]+|@wsparcie)/g,'$1<span class="mn">$2</span>').replace(/(^|[\s(])(#[a-ząćęłńóśźż][a-ząćęłńóśźż0-9-]*)/g,'$1<span class="mn">$2</span>').replace(/\n/g,"<br>");
+ $("#pvHint").textContent=HINT[genType]||"";
+ $("#copyLbl").textContent=isFile?"Kopiuj dopisek":"Kopiuj tekst";
+}
+$("#picker").addEventListener("click",e=>{const b=e.target.closest("[data-type]");if(!b)return;genType=b.dataset.type;renderGen();$(`#picker [data-type="${genType}"]`)?.focus();if(curView==="wiadomosci"){setHash("/wiadomosci/"+genType,true);curKey="wiadomosci/"+genType}});
+$("#genForm").addEventListener("input",e=>{const k=e.target.dataset.k;if(!k)return;gen[k]=e.target.value;store.set("gen",gen);paintPreview()});
+$("#genForm").addEventListener("change",e=>{const k=e.target.dataset.k;if(!k)return;gen[k]=e.target.value;store.set("gen",gen);paintPreview()});
+$("#genForm").addEventListener("submit",e=>e.preventDefault());
+$("#genForm").addEventListener("click",e=>{if(e.target.closest("[data-jump]")){e.preventDefault();$(".preview").scrollIntoView({behavior:"smooth",block:"start"})}});
+$("#genForm").addEventListener("click",e=>{if(e.target.id==="genReset"){gen=Object.assign({},EXAMPLE);if(club.miasto)gen.miasto=club.miasto;if(club.imie){gen.imie=club.imie;gen.prowadzacy=club.imie}store.del("gen");renderGen();$("#genReset")?.focus();toast("Przywrócono przykład")}});
+$("#copyGen").addEventListener("click",()=>copyText(genText()));
+$("#copyFab").addEventListener("click",()=>copyText(genText()));
+if("IntersectionObserver" in window){new IntersectionObserver(es=>{es.forEach(en=>$("#copyFab").hidden=en.isIntersecting)},{threshold:.4}).observe($("#copyGen"))}
+
+/* ---------- planer ---------- */
+const BR=[
+ [3,"Kameralnie",[["Miejsce","Kawiarnia, jeden stolik"],["Role","Ty prowadzisz i notujesz. Wystarczy."],["Czas","1,5–2 h"],["Uwaga","To pełnoprawne spotkanie. Tak zaczynały Piła i Krosno (po 3 osoby)."]]],
+ [8,"Jeden stół",[["Miejsce","Duży stół w kawiarni albo mała sala"],["Role","Prowadzący i sekretarz"],["Czas","2–2,5 h"],["Uwaga","Najlepszy rozmiar rozmowy. Warszawa: 4–8 osób, optymalnie około 6."]]],
+ [12,"Jedna grupa, twarda moderacja",[["Miejsce","Sala. Kawiarnia przestaje wystarczać."],["Role","Prowadzący, który nie dyskutuje, i sekretarz"],["Czas","2,5 h"],["Uwaga","Runda otwierająca i limit wypowiedzi. Bez nich mówi kilka osób."]]],
+ [20,"Stoliki i wspólny krąg",[["Miejsce","Sala z kilkoma stołami"],["Role","Przy każdym stoliku prowadzący i sekretarz"],["Czas","2,5–3 h"],["Uwaga","Grupy po 4–6 osób, potem wspólny krąg. Tak pracuje Wrocław."]]],
+ [30,"Dwa spotkania zamiast jednego",[["Miejsce","Duża sala albo dwa terminy"],["Role","Zespół prowadzących, po jednym na stolik"],["Czas","3 h"],["Uwaga","Powyżej 20 osób jakość rozmowy spada. Rozważ dwa terminy albo mikrospotkania jak w Warszawie."]]]
+];
+function drawRoom(n){
+ const tables=n<=12?1:Math.min(5,Math.ceil(n/6));const per=[];for(let i=0;i<tables;i++)per.push(Math.floor(n/tables)+(i<n%tables?1:0));
+ const rows=tables>3?2:1,cols=Math.ceil(tables/rows),W=640,H=rows===2?350:250;$("#room").setAttribute("viewBox",`0 0 ${W} ${H}`);
+ let svg=`<rect class="wall" x="6" y="6" width="${W-12}" height="${H-12}" rx="14"/>`;
+ per.forEach((seats,i)=>{const r=Math.floor(i/cols),c=i%cols,inRow=r===rows-1?tables-cols*(rows-1):cols;
+  const cx=W/(inRow+1)*(c+1),cy=rows===1?H/2-6:(r===0?72:214);
+  const tr=tables===1?Math.min(30+seats*4.2,78):Math.max(22,Math.min(16+seats*3.2,36)),sr=tables===1?9:7,ring=tr+sr+6;
+  svg+=`<circle class="tbl" cx="${cx}" cy="${cy}" r="${tr}"/>`;
+  for(let s=0;s<seats;s++){const a=-Math.PI/2+s*2*Math.PI/seats,x=cx+Math.cos(a)*ring,y=cy+Math.sin(a)*ring;const cls=s===0?"seat mod":s===1&&n>=4?"seat sec":"seat";svg+=`<circle class="${cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${sr}"/>`}
+  if(tables>1)svg+=`<text x="${cx}" y="${(cy+ring+sr+14).toFixed(0)}" text-anchor="middle">${String.fromCharCode(65+i)} · ${seats} os.</text>`;
+ });
+ if(n>=21)svg+=`<text x="${W/2}" y="${H-16}" text-anchor="middle">powyżej 20 osób rozważ dwa terminy</text>`;
+ return svg;
+}
+function renderPlanner(){
+ const n=+$("#nIn").value;$("#nOut").textContent=n;$("#room").innerHTML=drawRoom(n);
+ const b=BR.find(x=>n<=x[0]);$("#fmtName").textContent=b[1];$("#recs").innerHTML=b[2].map(r=>`<div><dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd></div>`).join("");
+ $("#legSec").hidden=n<4;
+ $("#room").setAttribute("aria-label",`Układ stołów dla ${n} ${plOs(n)}: ${b[1]}`);
+ $("#nIn").setAttribute("aria-valuetext",`${n} ${plOs(n)}`);
+}
+$("#nIn").addEventListener("input",renderPlanner);
+
+/* ---------- tryb prowadzącego ---------- */
+$("#scen").innerHTML=Object.entries(SCEN).map(([k,s])=>{const tot=s.steps.reduce((a,x)=>a+x[1],0);
+ return`<article id="scen-${k}"><header><div><h3>${esc(s.n)}</h3></div><button class="btn primary sm" type="button" data-meet="${k}">Rozpocznij</button></header><p>${esc(s.desc)}</p><div class="bars" aria-hidden="true">${s.steps.map(x=>`<i style="flex:${x[1]}" title="${esc(x[0])}"></i>`).join("")}</div><div class="total">${s.steps.length} kroków · ${tot} min · ${esc(s.src)}</div></article>`}).join("");
+const ST={k:null,i:0,el:0,run:false,last:0,extra:{},tot:0,lock:null,timer:null,arm:0};
+const mmss=s=>{const neg=s<0;s=Math.abs(Math.round(s));return(neg?"+":"")+String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")};
+function stDur(i){const s=SCEN[ST.k].steps[i];return(s[1]+(ST.extra[i]||0))*60}
+function stPaint(){
+ if(!ST.k)return;
+ const sc=SCEN[ST.k],s=sc.steps[ST.i],dur=stDur(ST.i),rem=dur-ST.el,last=ST.i===sc.steps.length-1;
+ $("#stName").textContent=sc.n;$("#stStep").textContent=`Krok ${ST.i+1} z ${sc.steps.length}`;$("#stTitle").textContent=s[0];$("#stHint").textContent=s[2];
+ $("#stClock").textContent=mmss(rem);$("#stClock").classList.toggle("over",rem<0);$("#stProg").classList.toggle("over",rem<0);
+ $("#stBar").style.width=Math.min(100,ST.el/dur*100)+"%";$("#stTotal").textContent=mmss(ST.tot);$("#stPlan").textContent=sc.steps.reduce((a,x,i)=>a+x[1]+(ST.extra[i]||0),0);
+ $("#stPlay").textContent=ST.run?"Pauza":"Wznów";
+ $("#stNext").textContent=last?"Zakończ":"Następny →";
+ $("#stList").innerHTML=sc.steps.map((x,i)=>`<li class="${i===ST.i?"cur":i<ST.i?"past":""}"${i===ST.i?' aria-current="step"':""}><span class="no">${i+1}</span><span>${esc(x[0])}</span><span class="m">${x[1]+(ST.extra[i]||0)}′</span></li>`).join("");
+}
+function stTick(){if(!ST.run)return;const now=performance.now();const dt=(now-ST.last)/1000;ST.last=now;ST.el+=dt;ST.tot+=dt;stPaint()}
+async function stLock(){if(stage.hidden||document.visibilityState!=="visible")return;if(ST.lock&&!ST.lock.released)return;try{ST.lock=await navigator.wakeLock?.request("screen")||null}catch(e){ST.lock=null}}
+function stOpen(k){
+ if(!pal.hidden)closePal(false);if(!clubDlg.hidden)dlgClose(clubDlg,false);if(!menuDlg.hidden)closeMenu(false);
+ Object.assign(ST,{k,i:0,el:0,run:true,last:performance.now(),extra:{},tot:0,arm:0});document.body.style.overflow="hidden";stPaint();dlgOpen(stage,"#stPlay");
+ clearInterval(ST.timer);ST.timer=setInterval(stTick,250);stLock();
+}
+function stClose(){ST.run=false;ST.arm=0;clearInterval(ST.timer);try{ST.lock?.release()}catch(e){}ST.lock=null;if(document.fullscreenElement)document.exitFullscreen?.().catch(()=>{});document.body.style.overflow="";dlgClose(stage);toast("Spotkanie zakończone. Czas na notatkę.")}
+function stEnd(){const now=Date.now();if(now-ST.arm<4000){stClose()}else{ST.arm=now;toast("Naciśnij jeszcze raz, żeby zakończyć spotkanie")}}
+function stGo(d){const n=SCEN[ST.k].steps.length,j=ST.i+d;if(j<0)return;if(j>=n){stEnd();return}ST.arm=0;ST.i=j;ST.el=0;ST.last=performance.now();stPaint()}
+$("#scen").addEventListener("click",e=>{const b=e.target.closest("[data-meet]");if(b)stOpen(b.dataset.meet)});
+$("#stNext").addEventListener("click",()=>stGo(1));$("#stPrev").addEventListener("click",()=>stGo(-1));
+$("#stPlay").addEventListener("click",()=>{ST.run=!ST.run;ST.last=performance.now();stPaint()});
+$("#stAdd").addEventListener("click",()=>{ST.extra[ST.i]=(ST.extra[ST.i]||0)+1;stPaint();toast("Dodano minutę do tego kroku")});
+$("#stClose").addEventListener("click",stEnd);
+$("#stFull").addEventListener("click",()=>{if(document.fullscreenElement)document.exitFullscreen?.().catch(()=>{});else stage.requestFullscreen?.().catch(()=>toast("Pełny ekran nie jest tu dostępny"))});
+document.addEventListener("keydown",e=>{if(stage.hidden)return;
+ if(e.key===" "){if(e.target.tagName==="BUTTON")return;e.preventDefault();ST.run=!ST.run;ST.last=performance.now();stPaint()}
+ else if(e.key==="ArrowRight")stGo(1);else if(e.key==="ArrowLeft")stGo(-1);else if(e.key==="Escape"){e.preventDefault();stEnd()}});
+document.addEventListener("visibilitychange",stLock);
+
+/* ---------- zasady ---------- */
+let ruleFilter="all";
+const ruleRow=r=>{const st=STATUS[r[4]]||STATUS.ok;return`<div class="rrow"><span class="txt">${inline(r[1])}</span><p class="src">${r[2]?`<span class="mono">${esc(r[2])}</span> · ${esc(r[3])}`:"Brak decyzji. Zapytaj opiekuna."}</p><span class="st"><span class="tag ${st[0]}">${st[1]}</span></span></div>`};
+function renderRules(){
+ const cnt=k=>k==="all"?RULES.length:RULES.filter(r=>r[4]===k).length;
+ $("#ruleFilters").innerHTML=[["all","Wszystkie według obszaru"],["oral","Tylko stanowiska ustne"],["open","Tylko nieustalone"]].map(([k,v])=>`<button class="chip" type="button" data-area="${k}" aria-pressed="${ruleFilter===k}">${esc(v)}<span class="n">${cnt(k)}</span></button>`).join("");
+ $("#ruleAll").hidden=ruleFilter!=="all";
+ if(ruleFilter!=="all"){$("#rules").innerHTML=`<div class="rgroup">${RULES.filter(r=>r[4]===ruleFilter).map(ruleRow).join("")}</div>`;return}
+ const openIds=$$("#rules details[open]").map(d=>d.id);
+ $("#rules").innerHTML=`<div class="rgroups">${Object.keys(AREAS).map(a=>{const l=RULES.filter(r=>r[0]===a);const extra=l.filter(r=>r[4]!=="ok").length;
+  return`<details class="rg" id="rg-${a}"${openIds.includes("rg-"+a)?" open":""}><summary><span><b>${esc(AREAS[a])}</b><small>${esc(l.filter(r=>r[4]==="ok").map(r=>r[1].replace(/`/g,"").split(/[.:(]/)[0]).slice(0,2).join(" · "))}${extra?` · ${extra} bez decyzji na piśmie`:""}</small></span><span class="n">${l.length}</span>${ICON_CHEV}</summary>${l.map(ruleRow).join("")}</details>`}).join("")}</div>`;
+ paintRuleAll();
+}
+function paintRuleAll(){const ds=$$("#rules details.rg");$("#ruleAll").textContent=ds.length&&ds.every(d=>d.open)?"Zwiń wszystkie":"Rozwiń wszystkie"}
+$("#ruleFilters").addEventListener("click",e=>{const b=e.target.closest("[data-area]");if(!b)return;ruleFilter=b.dataset.area;renderRules();$(`#ruleFilters [data-area="${ruleFilter}"]`)?.focus()});
+$("#ruleAll").addEventListener("click",()=>{const ds=$$("#rules details.rg");const open=!ds.every(d=>d.open);ds.forEach(d=>d.open=open);paintRuleAll()});
+$("#rules").addEventListener("toggle",paintRuleAll,true);
+$("#myths").innerHTML=MYTHS.map((m,i)=>`<div class="myth"><span class="ml">Mit ${i+1}</span><span class="mq">${esc(m[0])}</span><span class="ma"><b>Fakt</b>${esc(m[1])}</span><span class="ms">${esc(m[2])}</span></div>`).join("");
+
+/* ---------- kontakty ---------- */
+function paintGuard(){
+ const w=$("#woj").value,g=guardOf(w);
+ $("#guardWho").textContent=g||"Wybierz województwo";
+ $("#guardWhat").textContent=g?`Opiekun ${w==="zagranica"?"klubów za granicą":"województwa "+w}. Bieżące sprawy klubu kieruj bezpośrednio do tej osoby.`:"Opiekun z Zespołu Wsparcia Koordynacji pomaga w bieżących sprawach klubu.";
+ $("#guardReg").textContent=g?`Ta sama osoba opiekuje się: ${GUARDS[g].filter(x=>x!==w).join(", ")}.`:"Podział z 12 października 2026.";
+}
+$("#woj").addEventListener("change",paintGuard);
+$("#matters").innerHTML=MATTERS.map(m=>`<div class="matter"><span class="q">${esc(m[0])}</span><span class="w"><b>${inline(m[1])}</b><small>${inline(m[2])}</small></span></div>`).join("");
+$("#copyMail").addEventListener("click",()=>copyText($("#mail").textContent));
+
+/* ---------- dziennik ---------- */
+const LAST="2026-10-14",dayIso=s=>"2026-"+s.split(".")[1]+"-"+s.split(".")[0];
+const recent=s=>(new Date(LAST)-new Date(dayIso(s)))/864e5<=14;
+$("#log").innerHTML=LOG.map(l=>`<li class="${recent(l[0])?"new":""}"><time datetime="${dayIso(l[0])}">${l[0]}</time><i class="mk ${l[2]}" aria-hidden="true"></i><span class="txt">${esc(l[1])}<span class="sr"> (${l[2]==="change"?"zmiana dotychczasowej zasady":l[2]==="struct"?"struktura":"nowa zasada"})</span></span></li>`).join("");
+
+/* ---------- start ---------- */
+if(club.miasto&&!store.get("gen",null)){gen.miasto=club.miasto;if(club.imie){gen.imie=club.imie;gen.prowadzacy=club.imie}}
+renderPath();renderSits();renderGen();renderPlanner();renderRules();paintClub();
+render(pathFromHash(),true);booted=true;
+</script>
+</body>
+</html>
